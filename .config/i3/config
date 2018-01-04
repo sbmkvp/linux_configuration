@@ -32,6 +32,7 @@ exec "compton -b"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+for_window [class="."] floating enable
 
 # Switch off the title bar and borders
 new_window none
@@ -130,6 +131,12 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+
+# Screenshot tool
+bindsym --release $mod+x exec scrot -s ~/Media/Screenshots/%Y-%m-%d-%H%M%S.png
+
+# Lock the screen with i3lock
+bindsym $mod+Ctrl+l exec scrot ~/Media/blur.png && convert ~/Media/blur.png -blur 0x8 ~/Media/blur.png && i3lock -etu -p default -i ~/Media/blur.png -n && rm ~/Media/blur.png
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
