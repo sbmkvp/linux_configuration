@@ -15,7 +15,8 @@ set ignorecase
 set smartcase
 command! -nargs=+ Silent execute 'silent <args>' | redraw!
 set noerrorbells visualbell t_vb=
-map <C-L> yy:echo system("screen -S $STY -p R -X stuff ".shellescape(@"))<CR>j
 highlight OverLength ctermbg=darkred ctermfg=grey
 match OverLength /\%82v./
 highlight cursorcolumn ctermbg=darkgrey
+map <C-L> "kyy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@k),"$"))<CR>j
+vmap <C-L> "xy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@x."\n"),"$"))<CR>j
