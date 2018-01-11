@@ -32,35 +32,49 @@ filter_unmatched_urls = true
 #modify_other_keys = false
 
 [colors]
-cursor = #dcdccc
-cursor_foreground = #dcdccc
-foreground = #dcdccc
-foreground_bold = #ffffff
-background = rgba(50,50,50,0.8)
+# special
+foreground      = #93a1a1
+foreground_bold = #93a1a1
+cursor          = #93a1a1
+background      = rgba(25,25,25,0.85)
+
+# black
+color0  = #002b36
+color8  = #657b83
+
+# red
+color1  = #dc322f
+color9  = #dc322f
+
+# green
+color2  = #859900
+color10 = #859900
+
+# yellow
+color3  = #b58900
+color11 = #b58900
+
+# blue
+color4  = #268bd2
+color12 = #268bd2
+
+# magenta
+color5  = #6c71c4
+color13 = #6c71c4
+
+# cyan
+color6  = #2aa198
+color14 = #2aa198
+
+# white
+color7  = #93a1a1
+color15 = #fdf6e3
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
 
 # if unset, will reverse foreground and background
-highlight = #2f2f2f
-
-# colors from color0 to color254 can be set
-color0 = #3f3f3f
-color1 = #705050
-color2 = #60b48a
-color3 = #dfaf8f
-color4 = #506070
-color5 = #dc8cc3
-color6 = #8cd0d3
-color7 = #dcdccc
-color8 = #709080
-color9 = #dca3a3
-color10 = #c3bf9f
-color11 = #f0dfaf
-color12 = #94bff3
-color13 = #ec93d3
-color14 = #93e0e3
-color15 = #ffffff
+# highlight = #2f2f2f
 
 [hints]
 #font = Monospace 12
