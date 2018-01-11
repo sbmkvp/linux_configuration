@@ -36,7 +36,7 @@ for_window [class="."] floating enable
 # for_window [class="(?i)pavucontrol"] floating enable
 for_window [class="(?i)pavucontrol"] resize set 400 400
 # for_window [class="(?i)spotify"] floating enable
-for_window [class="(?i)spotify"] resize set 600 750
+for_window [class="(?i)spotify"] resize set 600 700
 for_window [class="(?i)chromium"] resize set 1000 900
 for_window [class="(?i)termite"] resize set 800 1000
 
