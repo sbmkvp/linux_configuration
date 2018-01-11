@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -27,11 +27,12 @@ font pango:monospace 8
 # font, it doesn’t scale on retina/hidpi displays.
 
 exec --no-startup-id /usr/bin/feh --bg-scale '/home/ucfnbso/Media/Wallpapers/mkbhd.jpg'
-exec "setxkbmap -layout gb"
+#exec "setxkbmap -layout gb"
+#exec "setxkbmap -layout gb -variant mac"
 exec "compton -b"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier Mod2
 # for_window [class="."] floating enable
 
 # Switch off the title bar and borders
@@ -45,8 +46,8 @@ gaps outer 0
 smart_gaps on
 
 # start a terminal
-# bindsym $mod+Return exec termite
-# bindsym $mod+Shift+Return exec chromium
+bindsym $mod+Return exec termite
+bindsym $mod+Shift+Return exec chromium
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -177,7 +178,7 @@ bar {
 	status_command i3status
 	mode hide
 	hidden_state hide
-	modifier Mod1
+	modifier Mod2
 	position top
 	position bottom
 	colors {
