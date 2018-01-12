@@ -38,7 +38,6 @@ for_window [class="(?i)pavucontrol"] resize set 400 400
 # for_window [class="(?i)spotify"] floating enable
 for_window [class="(?i)spotify"] resize set 600 700
 for_window [class="(?i)chromium"] resize set 1000 900
-for_window [class="(?i)termite"] resize set 800 1000
 
 
 # Switch off the title bar and borders
@@ -125,7 +124,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+# bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -137,13 +136,22 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+# bindsym $mod+Shift+0 move container to workspace 10
 
 # Screenshot tool
 bindsym --release $mod+x exec scrot -s ~/Media/Screenshots/%Y-%m-%d-%H%M%S.png
 
 # Lock the screen with i3lock
 bindsym $mod+Ctrl+l exec scrot ~/Media/blur.png && convert ~/Media/blur.png -blur 0x8 ~/Media/blur.png && i3lock -etu -p default -i ~/Media/blur.png -n && rm ~/Media/blur.png
+
+# Control spotify
+bindsym $mod+p exec playerctl play-pause
+bindsym $mod+bracketleft exec playerctl previous
+bindsym $mod+bracketright exec playerctl next
+bindsym $mod+equal exec pactl set-sink-volume 0 +5%
+bindsym $mod+minus exec pactl set-sink-volume 0 -5%
+bindsym $mod+0 exec pactl set-sink-mute 0 toggle
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
