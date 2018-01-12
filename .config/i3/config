@@ -33,12 +33,6 @@ exec "compton -b"
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 for_window [class="."] floating enable
-# for_window [class="(?i)pavucontrol"] floating enable
-for_window [class="(?i)pavucontrol"] resize set 400 400
-# for_window [class="(?i)spotify"] floating enable
-for_window [class="(?i)spotify"] resize set 600 700
-for_window [class="(?i)chromium"] resize set 1000 900
-
 
 # Switch off the title bar and borders
 new_window none
