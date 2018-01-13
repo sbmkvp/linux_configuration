@@ -98,3 +98,7 @@ stty -ixon
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx
 fi
+
+alias mac_sst_start='ssh -D 8080 -f -q -C -N ucfnbso@arch.geog.ucl.ac.uk'
+alias mac_proxy_on="sudo networksetup -setsocksfirewallproxy Wi-Fi localhost 8080"
+alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
