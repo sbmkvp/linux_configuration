@@ -33,7 +33,7 @@ exec --no-startup-id dunst
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-for_window [class="."] floating enable
+# for_window [class="."] floating enable
 
 # Switch off the title bar and borders
 new_window none
