@@ -21,4 +21,5 @@ highlight cursorcolumn ctermbg=darkgrey
 map <C-L> "kyy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@k),"$"))<CR>j
 vmap <C-L> "xy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@x."\n"),"$"))<CR>j
 map <C-M><C-M> :echo system("screen -S $STY -p R -X stuff ".shellescape("\014"))<CR>
+map <C-K><C-K> :echo system("screen -S $STY -p R -X stuff ".shellescape("source('".expand('%:t')."')\n"))<CR>
 set t_Co=256
