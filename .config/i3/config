@@ -30,6 +30,7 @@ exec --no-startup-id /usr/bin/feh --bg-scale '/home/ucfnbso/Media/Wallpapers/mkb
 exec "setxkbmap -layout gb"
 exec "compton -b"
 exec --no-startup-id dunst
+exec setxkbmap -option caps:escape
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -143,8 +144,8 @@ bindsym $mod+Ctrl+l exec scrot ~/Media/blur.png && convert ~/Media/blur.png -blu
 bindsym $mod+p exec playerctl play-pause
 bindsym $mod+bracketleft exec playerctl previous
 bindsym $mod+bracketright exec playerctl next
-bindsym $mod+equal exec "pactl set-sink-volume 0 +5% && notify-send '&#8743;' -t 300"
-bindsym $mod+minus exec "pactl set-sink-volume 0 -5% && notify-send '&#8744;' -t 300"
+bindsym $mod+equal exec "pactl set-sink-volume 0 +5% && notify-send $(pamixer --get-volume) -t 300"
+bindsym $mod+minus exec "pactl set-sink-volume 0 -5% && notify-send $(pamixer --get-volume) -t 300"
 bindsym $mod+0 exec pactl set-sink-mute 0 toggle
 
 
