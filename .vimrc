@@ -13,6 +13,7 @@ set smartindent
 set cindent
 set ignorecase
 set smartcase
+set scrolloff=10
 command! -nargs=+ Silent execute 'silent <args>' | redraw!
 set noerrorbells visualbell t_vb=
 highlight OverLength ctermbg=darkred ctermfg=grey

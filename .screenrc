@@ -1,4 +1,24 @@
 layout save default
+startup_message off
 attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
 defbce "on"
+hardstatus ignore
+mousetrack on
+
+bindkey "^[[1;5D" focus left
+bindkey "^[[1;5C" focus right
+bindkey "^[[1;5A" focus up
+bindkey "^[[1;5B" focus down
+
+bindkey "^[OR" prev
+bindkey "^[OS" next
+
+bindkey "^[OQ" eval "command -c rsz"
+bind -c rsz h eval "resize -h -1" "command -c rsz"
+bind -c rsz k eval "resize -v -1" "command -c rsz"
+bind -c rsz j eval "resize -v +1" "command -c rsz"
+bind -c rsz l eval "resize -h +1" "command -c rsz"
+
+caption string "%{03} "
+rendition so =00
