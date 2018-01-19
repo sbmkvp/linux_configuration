@@ -1,7 +1,9 @@
+set my_pass = `gpg -dq $HOME/.mutt/pwd.gpg`
 set ssl_starttls=yes
 set ssl_force_tls=yes
 set imap_user = 'sbm.kvp@gmail.com'
-set from= 'sbm.kvp@gmail.com'
+set imap_pass = $my_pass
+set from = 'sbm.kvp@gmail.com'
 set realname='Balamurugan'
 set folder = imaps://imap.gmail.com/
 set spoolfile = imaps://imap.gmail.com/INBOX
@@ -9,7 +11,9 @@ set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
 set header_cache = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/bodies"
 set certificate_file = "~/.mutt/certificates"
+set smtp_authenticators = 'login'
 set smtp_url = 'smtps://sbm.kvp@smtp.gmail.com:465/'
+set smtp_pass = $my_pass
 set move = no
 set imap_keepalive = 900
 set editor = vim
@@ -22,3 +26,4 @@ set imap_check_subscribed
 set mail_check=60
 set timeout=10
 set copy=no
+auto_view text/html
