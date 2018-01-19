@@ -2,9 +2,9 @@ layout save default
 startup_message off
 attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
+termcapinfo xterm* ti@:te@
 defbce "on"
 hardstatus ignore
-mousetrack on
 
 bindkey "^[[1;5D" focus left
 bindkey "^[[1;5C" focus right

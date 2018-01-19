@@ -102,3 +102,9 @@ fi
 alias mac_sst_start='ssh -D 8080 -f -q -C -N ucfnbso@arch.geog.ucl.ac.uk'
 alias mac_proxy_on="sudo networksetup -setsocksfirewallproxy Wi-Fi localhost 8080"
 alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
+
+PATH="/home/ucfnbso/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/ucfnbso/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/ucfnbso/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/ucfnbso/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/ucfnbso/perl5"; export PERL_MM_OPT;

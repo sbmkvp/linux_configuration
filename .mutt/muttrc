@@ -1,0 +1,24 @@
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set imap_user = 'sbm.kvp@gmail.com'
+set from= 'sbm.kvp@gmail.com'
+set realname='Balamurugan'
+set folder = imaps://imap.gmail.com/
+set spoolfile = imaps://imap.gmail.com/INBOX
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+set smtp_url = 'smtps://sbm.kvp@smtp.gmail.com:465/'
+set move = no
+set imap_keepalive = 900
+set editor = vim
+bind pager j next-line
+bind pager k previous-line
+set sort = threads
+set sort_aux = reverse-date-sent
+unset imap_passive        
+set imap_check_subscribed
+set mail_check=60
+set timeout=10
+set copy=no
