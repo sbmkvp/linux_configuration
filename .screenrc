@@ -1,10 +1,12 @@
 layout save default
 startup_message off
-attrcolor b ".I"
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
-termcapinfo xterm* ti@:te@
-defbce "on"
+term xterm-256color
 hardstatus ignore
+attrcolor b ".I"
+defbce "on"
+termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
 
 bindkey "^[[1;5D" focus left
 bindkey "^[[1;5C" focus right
