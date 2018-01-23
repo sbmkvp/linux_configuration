@@ -26,4 +26,4 @@ set imap_check_subscribed
 set mail_check=60
 set timeout=10
 set copy=no
-auto_view text/html
+color normal default default
