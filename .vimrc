@@ -24,3 +24,4 @@ vmap <C-L> "xy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@x
 map <C-M><C-M> :echo system("screen -S $STY -p R -X stuff ".shellescape("\014"))<CR>
 map <C-K><C-K> :echo system("screen -S $STY -p R -X stuff ".shellescape("source('".expand('%:t')."')\n"))<CR><CR>
 set t_Co=256
+set spell spelllang=en
