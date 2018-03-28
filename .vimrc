@@ -24,4 +24,4 @@ map <C-K><C-K> :echo system("screen -S $STY -p R -X stuff ".shellescape("source(
 set t_Co=256
 set foldcolumn=1
 hi FoldColumn ctermbg=Black
-set spell_spelllang=en
+set spelllang=en
