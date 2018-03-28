@@ -26,7 +26,7 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-exec --no-startup-id /usr/bin/feh --bg-scale '/home/ucfnbso/Media/Wallpapers/abstract.jpg'
+exec --no-startup-id /usr/bin/feh --bg-scale '/home/ucfnbso/Media/Wallpapers/Landscape.jpg'
 exec "setxkbmap -layout gb"
 exec "compton -b"
 exec --no-startup-id dunst

@@ -20,7 +20,7 @@ cursor_blink = system
 cursor_shape = ibeam
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
-browser = chromium-browser
+browser = qutebrowser
 
 # set size hints for the window
 #size_hints = false
@@ -39,8 +39,8 @@ cursor          = #93a1a1
 background      = rgba(25,25,25,1)
 
 # black
-color0  = #657b83
-color8  = #657b83
+color0  = #191919
+color8  = #191919
 
 # red
 color1  = #dc322f
@@ -82,9 +82,9 @@ color15 = #fdf6e3
 #background = #3f3f3f
 #active_foreground = #e68080
 #active_background = #3f3f3f
-#padding = 2
+#padding = 5px
 #border = #3f3f3f
 #border_width = 0.5
 #roundness = 2.0
 
-# vim: ft=dosini cms=#%s
+vim: ft=dosini cms=#%s
