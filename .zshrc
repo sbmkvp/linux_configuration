@@ -109,3 +109,4 @@ PERL_LOCAL_LIB_ROOT="/home/ucfnbso/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB
 PERL_MB_OPT="--install_base \"/home/ucfnbso/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/ucfnbso/perl5"; export PERL_MM_OPT;
 alias web=qutebrowser
+export PATH="/usr/local/opt/gdal2/bin:$PATH"
