@@ -25,3 +25,7 @@ set t_Co=256
 set foldcolumn=1
 hi FoldColumn ctermbg=Black
 set spelllang=en
+map <tab><tab> <C-^>
+map <tab>n :bNext<CR>
+map <tab>p :bprevious<CR>
+map <tab>l :buffers<CR>:b
