@@ -61,6 +61,7 @@ ZSH_THEME=""
 plugins=(
 	git
 	npm
+	vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
