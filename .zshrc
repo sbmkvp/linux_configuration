@@ -112,4 +112,4 @@ PERL_MB_OPT="--install_base \"/home/ucfnbso/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/ucfnbso/perl5"; export PERL_MM_OPT;
 
 alias web=qutebrowser
-PROMPT="%{$terminfo[bold]$fg[red]%}%12>>%m%>>>> %{$reset_color%}"
+PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>>>> %{$reset_color%}"
