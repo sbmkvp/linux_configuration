@@ -17,6 +17,14 @@ set path+=**
 command! MakeTags !ctags -R <CR>
 set wildmenu
 colorscheme badwolf
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+imap <Up> <NOP>
+imap <Down> <NOP>
+imap <Left> <NOP>
+imap <Right> <NOP>
 let g:netrw_banner=0
 let g:netrw_browse_split=4
 let g:netrw_altv=1
