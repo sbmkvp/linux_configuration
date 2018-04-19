@@ -10,6 +10,7 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'sjl/badwolf'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'sedm0784/vim-you-autocorrect'
 call vundle#end()
 filetype plugin indent on
 syntax on
@@ -43,6 +44,7 @@ set cindent
 set ignorecase
 set smartcase
 set scrolloff=10
+set tw=80
 command! -nargs=+ Silent execute 'silent <args>' | redraw!
 set noerrorbells visualbell t_vb=
 highlight OverLength ctermbg=darkred ctermfg=grey
@@ -61,10 +63,12 @@ map <tab>l :buffers<CR>:b
 function! s:goyo_enter()
 	set background=light
     colorscheme pencil
+	:EnableAutocorrect
 endfunction
 function! s:goyo_leave()
 	set background=dark
     colorscheme badwolf
+	:DisableAutocorrect
 endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
