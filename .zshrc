@@ -104,8 +104,8 @@ alias mac_sst_start='ssh -D 8080 -f -q -C -N ucfnbso@arch.geog.ucl.ac.uk'
 alias mac_proxy_on="sudo networksetup -setsocksfirewallproxy Wi-Fi localhost 8080"
 alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
 alias cdrcdesk="ssh -Ct ucfnbso@square.geog.ucl.ac.uk ssh -C ucfnbso@128.40.199.112"
-alias GarageInc="ssh -C bala@164.132.196.212"
-alias gawkc="gawk -vFPAT='[^,]*|\"[^\"]*\"'"
+alias garageinc="ssh -C bala@164.132.196.212"
+alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"'"
 
 PATH="/home/ucfnbso/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/ucfnbso/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
