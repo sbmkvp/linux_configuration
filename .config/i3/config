@@ -26,11 +26,13 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-exec --no-startup-id /usr/bin/feh --bg-scale '/home/ucfnbso/Media/Wallpapers/Landscape.jpg'
-exec "setxkbmap -layout gb"
-exec "compton -b"
+exec compton -b
 exec --no-startup-id dunst
-exec setxkbmap -option caps:escape
+exec --no-startup-id "/usr/bin/feh --bg-scale '~/Media/Wallpapers/Landscape.jpg'"
+exec --no-startup-id "xrandr --output DVI-I-1 --pos 0x0 --output DP-4 --right-of DVI-I-1; ~/.fehbg"
+exec_always --no-startup-id "sleep 1; setxkbmap -layout gb; setxkbmap -option caps:escape"
+workspace 2 output "DP-4"
+workspace 1 output "DVI-I-1"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -42,7 +44,7 @@ new_window none
 focus_follows_mouse no
 
 # Set up gaps between screens
-gaps inner 20
+gaps inner 15
 gaps outer 0
 smart_gaps on
 
