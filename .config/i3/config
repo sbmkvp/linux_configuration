@@ -26,7 +26,7 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-exec --no-startup-id /usr/bin/feh --bg-scale '/home/ucfnbso/Media/Wallpapers/Landscape.jpg'
+exec --no-startup-id /bin/zsh -c "/usr/bin/feh --bg-scale '~/Media/Wallpapers/Landscape.jpg'"
 exec "setxkbmap -layout gb"
 exec "compton -b"
 exec --no-startup-id dunst
@@ -42,7 +42,7 @@ new_window none
 focus_follows_mouse no
 
 # Set up gaps between screens
-gaps inner 20
+gaps inner 10
 gaps outer 0
 smart_gaps on
 
@@ -54,7 +54,7 @@ smart_gaps on
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec "rofi -width 600 -show run -theme /usr/share/rofi/themes/bala.rasi"
+bindsym $mod+space exec "rofi -width 600 -show run -theme ~/.config/rofi/bala.rasi"
 bindsym $mod+Shift+space exec "rofi -width 600 -show window -theme /usr/share/rofi/themes/bala.rasi"
 bindsym $mod+Shift+m move scratchpad
 bindsym $mod+m scratchpad show
