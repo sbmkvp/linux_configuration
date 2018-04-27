@@ -46,7 +46,7 @@ focus_follows_mouse no
 # Set up gaps between screens
 gaps inner 10
 gaps outer 0
-smart_gaps on
+#smart_gaps on
 
 # start a terminal
 # bindsym $mod+Return exec termite
@@ -66,8 +66,8 @@ bindsym $mod+n sticky toggle
 bindsym $mod+F3 exec "pactl set-sink-volume 0 +5%"
 bindsym $mod+F2 exec "pactl set-sink-volume 0 -5%"
 bindsym $mod+F1 exec "pactl set-sink-mute 0 toggle"
-bindsym $mod+F12 exec "xbacklight -inc 10"
-bindsym $mod+F11 exec "xbacklight -dec 10"
+bindsym $mod+F12 exec "xbacklight -inc 5"
+bindsym $mod+F11 exec "xbacklight -dec 5"
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -103,6 +103,7 @@ bindsym $mod+Shift+bar split h
 
 # split in vertical orientation
 bindsym $mod+v split v
+bindsym $mod+g split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -124,28 +125,40 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+z focus child
 
+set $ws1 "1:General"
+set $ws2 "2:Internet"
+set $ws3 "3:Work"
+set $ws4 "4:Media"
+set $ws5 "5:Comms"
+set $ws6 "6:Virtual"
+set $ws7 "7:Remote"
+set $ws8 "8:Reading"
+set $ws9 "9:Writing"
+
+bindsym $mod+Shift+T exec i3-input -F 'rename workspace to "%s"' -P ''
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 # bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
 # bindsym $mod+Shift+0 move container to workspace 10
 
 # Screenshot tool
@@ -208,6 +221,7 @@ bar {
 	hidden_state hide
 	modifier Mod1
 	position bottom
+	strip_workspace_numbers yes
 	colors {
 		background #222222
 		statusline #bbbbbb
