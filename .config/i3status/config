@@ -11,6 +11,7 @@ general {
         interval = 1
 }
 
+order += "cpu_usage"
 order += "disk /"
 order += "volume master"
 order += "wireless _first_"
@@ -18,24 +19,31 @@ order += "battery all"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "%essid "
-        format_down = "Wi-Fi "
+        format_up = " %essid "
+        format_down = " Wi-Fi "
 }
 
 battery all {
-        format = " %percentage | %remaining "
+        format = " %status%percentage | %remaining "
+		hide_seconds = true
+		status_chr = "⚡"
+		status_bat = ""
 }
 
 tztime local {
-        format = " %d %b %H:%M"
+        format = "%a %d %b %H:%M "
 }
 
 volume master {
         format = " %volume "
-        format_muted = " %volume(m) "
+        format_muted = " %volume "
         device = "pulse:0"
 }
 
 disk "/" {
-        format = "%avail"
+        format = " %avail "
+}
+
+cpu_usage {
+        format = " %usage "
 }
