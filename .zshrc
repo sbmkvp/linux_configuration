@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 stty -ixon
 
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
+  exec startx &> /dev/null
 fi
 
 alias mac_sst_start='ssh -D 8080 -f -q -C -N ucfnbso@arch.geog.ucl.ac.uk'
