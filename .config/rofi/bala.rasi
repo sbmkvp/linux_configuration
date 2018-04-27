@@ -38,7 +38,7 @@
 #window {
     background-color: @background;
     border:           0;
-    padding:          10;
+    padding:          15;
 }
 #mainbox {
     border:  0;
@@ -56,9 +56,9 @@
     fixed-height: 0;
     border:       0px 0px 0px ;
     border-color: @separatorcolor;
-    spacing:      10px ;
+    spacing:      0px ;
     scrollbar:    false;
-    padding:      5;
+    padding:      0;
 }
 #element {
     border:  0;
@@ -101,13 +101,13 @@
     text-color:       @alternate-active-foreground;
 }
 #scrollbar {
-    width:        4px ;
+    width:        0px ;
     border:       0;
-    handle-width: 8px ;
+    handle-width: 0px ;
     padding:      0;
 }
 #sidebar {
-    border:       2px 0px 0px ;
+    border:       0px 0px 0px ;
     border-color: @separatorcolor;
 }
 #button.selected {
@@ -117,7 +117,7 @@
 #inputbar {
     spacing:    0;
     text-color: @normal-foreground;
-    padding:    1px ;
+    padding:    0px ;
 }
 #case-indicator {
     spacing:    0;
@@ -129,5 +129,5 @@
 }
 #prompt {
     spacing:    0;
-    text-color: @normal-foreground;
+    text-color: @normal-background;
 }
