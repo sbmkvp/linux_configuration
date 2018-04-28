@@ -24,7 +24,7 @@ wireless _first_ {
 }
 
 battery all {
-        format = " %status%percentage | %remaining "
+        format = " %status%percentage (%remaining hrs) "
 		hide_seconds = true
 		status_chr = "⚡"
 		status_bat = ""

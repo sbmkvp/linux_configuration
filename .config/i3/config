@@ -28,7 +28,6 @@ font pango:monospace 8
 
 exec --no-startup-id "setxkbmap -layout gb"
 exec --no-startup-id "setxkbmap -option caps:escape"
-exec --no-startup-id "compton -b"
 exec --no-startup-id "dunst"
 exec --no-startup-id "/usr/bin/feh --bg-scale '~/Media/Wallpapers/Landscape.jpg'"
 exec --no-startup-id "xrandr --output DVI-I-1 --pos 0x0 --output DP-4 --right-of DVI-I-1; ~/.fehbg"
@@ -165,8 +164,8 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym --release $mod+x exec scrot -s ~/Media/Screenshots/%Y-%m-%d-%H%M%S.png
 
 # Lock the screen with i3lock
-bindsym $mod+Ctrl+l exec scrot ~/Media/blur.png && convert ~/Media/blur.png -blur 0x8 ~/Media/blur.png && i3lock -etu -p default -i ~/Media/blur.png -n && rm ~/Media/blur.png
-bindsym $mod+F9 exec scrot ~/Media/blur.png && convert ~/Media/blur.png -blur 0x8 ~/Media/blur.png && i3lock -etu -p default -i ~/Media/blur.png -n && rm ~/Media/blur.png
+bindsym $mod+Ctrl+l exec "scrot ~/Media/blur.png && convert ~/Media/blur.png -blur 0x8 ~/Media/blur.png && i3lock -etu -p default -i ~/Media/blur.png -n && rm ~/Media/blur.png"
+bindsym $mod+F9 exec "scrot ~/Media/blur.png && convert ~/Media/blur.png -blur 0x8 ~/Media/blur.png && i3lock -etu -p default -i ~/Media/blur.png -n && rm ~/Media/blur.png"
 
 # Control spotify
 bindsym $mod+p exec playerctl play-pause
