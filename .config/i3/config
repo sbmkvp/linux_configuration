@@ -29,6 +29,7 @@ font pango:monospace 8
 exec --no-startup-id "setxkbmap -layout gb"
 exec --no-startup-id "setxkbmap -option caps:escape"
 exec --no-startup-id "dunst"
+exec --no-startup-id "compton --config .config/compton/compton"
 exec --no-startup-id "/usr/bin/feh --bg-scale '~/Media/Wallpapers/Landscape.jpg'"
 exec --no-startup-id "xrandr --output DVI-I-1 --pos 0x0 --output DP-4 --right-of DVI-I-1; ~/.fehbg"
 exec --no-startup-id "sleep 1; setxkbmap -layout gb; setxkbmap -option caps:escape"
@@ -38,7 +39,7 @@ floating_modifier $mod
 # for_window [class="."] floating enable
 
 # Switch off the title bar and borders
-new_window none
+default_border none
 # Switch of the focus following the mouse pointer
 focus_follows_mouse no
 

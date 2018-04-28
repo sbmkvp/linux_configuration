@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=~/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -106,7 +106,8 @@ alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
 alias cdrcdesk="ssh -Ct ucfnbso@square.geog.ucl.ac.uk ssh -C ucfnbso@128.40.199.112"
 alias garageinc="ssh -C bala@164.132.196.212"
 alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"'"
-alias switchoff="poweroff &> /dev/null"
+alias switchoff="shutdown 0 &> /dev/null"
+alias restart="shutdown -r 0 &> /dev/null"
 
 PATH="/home/ucfnbso/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/ucfnbso/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
