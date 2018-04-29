@@ -62,6 +62,7 @@ plugins=(
 	git
 	npm
 	vi-mode
+	screen
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,7 +104,7 @@ fi
 alias mac_sst_start='ssh -D 8080 -f -q -C -N ucfnbso@arch.geog.ucl.ac.uk'
 alias mac_proxy_on="sudo networksetup -setsocksfirewallproxy Wi-Fi localhost 8080"
 alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
-alias cdrcdesk="ssh -Ct ucfnbso@square.geog.ucl.ac.uk ssh -C ucfnbso@128.40.199.112"
+alias cdrcdesk="ssh -CYt ucfnbso@square.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
 alias garageinc="ssh -C bala@164.132.196.212"
 alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"'"
 alias switchoff="shutdown 0 &> /dev/null"
@@ -116,7 +117,13 @@ PERL_MB_OPT="--install_base \"/home/ucfnbso/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/ucfnbso/perl5"; export PERL_MM_OPT;
 
 alias web=qutebrowser
-PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
+
+if [[ -v STY ]]; then
+	PROMPT="%{$terminfo[bold]$fg[red]%}$(echo $STY | awk -F'.' '{print $2}')-%13>>%m%>> >> %{$reset_color%}"
+else
+	PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
+fi
+export STYN="$(echo $STY | awk -F'.' '{if($2) print $2}')"
 
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 clear
