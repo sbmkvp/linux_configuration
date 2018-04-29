@@ -29,8 +29,7 @@ font pango:monospace 8
 exec --no-startup-id "setxkbmap -layout gb"
 exec --no-startup-id "setxkbmap -option caps:escape"
 exec --no-startup-id "dunst"
-exec --no-startup-id "compton --config .config/compton/compton"
-exec --no-startup-id "/usr/bin/feh --bg-scale '~/Media/Wallpapers/Landscape.jpg'"
+# exec --no-startup-id "/usr/bin/feh --bg-scale '~/Media/Wallpapers/Landscape.jpg'"
 exec --no-startup-id "xrandr --output DVI-I-1 --pos 0x0 --output DP-4 --right-of DVI-I-1; ~/.fehbg"
 exec --no-startup-id "sleep 1; setxkbmap -layout gb; setxkbmap -option caps:escape"
 
@@ -217,8 +216,6 @@ bindsym $mod+b bar mode toggle
 
 bar {
 	status_command i3status
-	mode dock
-	hidden_state hide
 	modifier Mod1
 	position bottom
 	strip_workspace_numbers yes
