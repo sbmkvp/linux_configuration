@@ -119,3 +119,4 @@ alias web=qutebrowser
 PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
 
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+clear
