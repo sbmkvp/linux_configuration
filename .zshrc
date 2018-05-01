@@ -107,8 +107,6 @@ alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
 alias cdrcdesk="ssh -CYt ucfnbso@square.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
 alias garageinc="ssh -C bala@164.132.196.212"
 alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"'"
-alias switchoff="shutdown 0 &> /dev/null"
-alias restart="shutdown -r 0 &> /dev/null"
 
 PATH="/home/ucfnbso/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/ucfnbso/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;

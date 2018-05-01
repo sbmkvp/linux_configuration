@@ -144,7 +144,7 @@ c.tabs.favicons.show = False
 #   - bottom
 #   - left
 #   - right
-c.tabs.position = 'bottom'
+c.tabs.position = 'top'
 
 # When to show the tab bar.
 # Type: String

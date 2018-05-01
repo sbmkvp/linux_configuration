@@ -17,6 +17,13 @@ syntax on
 set path+=**
 command! MakeTags !ctags -R <CR>
 set wildmenu
+set wildmode=full
+set incsearch
+set laststatus=2
+set history=1000
+set relativenumber
+set synmaxcol=200
+set number
 colorscheme badwolf
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -34,21 +41,25 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 set backspace=indent,eol,start
 set cursorline
+set cursorcolumn
+set ruler
 nnoremap ; :
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
 set autoindent
+set breakindent
 set smartindent
 set cindent
 set ignorecase
 set smartcase
+set sidescrolloff=10
 set scrolloff=10
-" set tw=80
+set tw=80
 command! -nargs=+ Silent execute 'silent <args>' | redraw!
 set noerrorbells visualbell t_vb=
 highlight OverLength ctermbg=darkred ctermfg=grey
-match OverLength /\%82v./
+match OverLength /\%81v./
 highlight cursorcolumn ctermbg=darkgrey
 map <C-L> "kyy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@k),"$"))<CR>j
 vmap <C-L> "xy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@x."\n"),"$"))<CR>j
@@ -64,14 +75,20 @@ function! s:goyo_enter()
 	set background=light
     colorscheme pencil
 	:EnableAutocorrect
+	set tw=0
 endfunction
 function! s:goyo_leave()
 	set background=dark
     colorscheme badwolf
 	:DisableAutocorrect
+	set tw=80
 endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 map go :Goyo<CR>
 map gl :GitGutter<CR>
-
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
