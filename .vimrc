@@ -41,7 +41,7 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 set backspace=indent,eol,start
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 set ruler
 nnoremap ; :
 set tabstop=4
@@ -61,10 +61,11 @@ set noerrorbells visualbell t_vb=
 highlight OverLength ctermbg=darkred ctermfg=grey
 match OverLength /\%81v./
 highlight cursorcolumn ctermbg=darkgrey
+map <C-J> gj
+map <C-K> gk
 map <C-L> "kyy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@k),"$"))<CR>j
 vmap <C-L> "xy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@x."\n"),"$"))<CR>j
-map <C-M><C-M> :echo system("screen -S $STY -p R -X stuff ".shellescape("\014"))<CR>
-map <C-K><C-K> :echo system("screen -S $STY -p R -X stuff ".shellescape("source('".expand('%:t')."')\n"))<CR><CR>
+map <C-M><C-M> :echo system("screen -S $STY -p R -X stuff ".shellescape("source('".expand('%:t')."')\n"))<CR><CR>
 set t_Co=256
 set spelllang=en
 map <tab><tab> <C-^>
@@ -72,13 +73,11 @@ map <tab>n :bNext<CR>
 map <tab>p :bprevious<CR>
 map <tab>l :buffers<CR>:b
 function! s:goyo_enter()
-	set background=light
     colorscheme pencil
 	:EnableAutocorrect
 	set tw=0
 endfunction
 function! s:goyo_leave()
-	set background=dark
     colorscheme badwolf
 	:DisableAutocorrect
 	set tw=80

@@ -24,10 +24,12 @@ wireless _first_ {
 }
 
 battery all {
-        format = " %status%percentage " 
+        format = " %status%percentage (%remaining) " 
 		hide_seconds = true
-		status_chr = " "
-		status_bat = "  " 
+		status_chr = "  "
+		status_unk = "  "
+		status_bat = "   " 
+		status_full = "   " 
 }
 
 tztime local {
