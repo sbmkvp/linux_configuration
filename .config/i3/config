@@ -56,8 +56,8 @@ bindsym $mod+q kill
 # start dmenu (a program launcher)
 bindsym $mod+Return exec --no-startup-id "termite"
 bindsym $mod+Shift+Return exec --no-startup-id "qutebrowser"
-bindsym $mod+space exec --no-startup-id "rofi -width 400 -show run -theme ~/.config/rofi/bala.rasi"
-bindsym $mod+Shift+space exec --no-startup-id "rofi -width 400 -show window -theme ~/.config/rofi/bala.rasi"
+bindsym $mod+space exec --no-startup-id "rofi -show run -display-run '>>> ' -width 400 -theme ~/.config/rofi/bala.rasi"
+bindsym $mod+Shift+space exec --no-startup-id "rofi -width 400 -show window -display-window '$$$ ' -theme ~/.config/rofi/bala.rasi"
 bindsym $mod+Shift+m move scratchpad
 bindsym $mod+m scratchpad show
 bindsym $mod+n sticky toggle
