@@ -121,7 +121,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/ucfnbso/perl5"; export PERL_MM_OPT;
 
 alias web=qutebrowser
 
-if [[ -v STY ]]; then
+if [ -n "${STY+1}" ]; then
 	PROMPT="%{$terminfo[bold]$fg[red]%}$(echo $STY | awk -F'.' '{print $2}')-%13>>%m%>> >> %{$reset_color%}"
 else
 	PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
