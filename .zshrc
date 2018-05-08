@@ -106,9 +106,9 @@ alias mac_proxy_on="sudo networksetup -setsocksfirewallproxy Wi-Fi localhost 808
 alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
 alias cdrcdesk="ssh -CYt ucfnbso@square.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
 if [[ $HOST = "cdrc-desk" ]]; then
-	alias cdrcdb="ssh -CX ucfnbso@cdrc-db.geog.ucl.ac.uk";
+	alias cdrcdb="ssh -C ucfnbso@cdrc-db.geog.ucl.ac.uk";
 else
-	alias cdrcdb="ssh -CYt ucfnbso@square.geog.ucl.ac.uk ssh -CX ucfnbso@cdrc-db.geog.ucl.ac.uk";
+	alias cdrcdb="ssh -Ct ucfnbso@square.geog.ucl.ac.uk ssh -C ucfnbso@cdrc-db.geog.ucl.ac.uk";
 fi
 alias garageinc="ssh -C bala@164.132.196.212"
 alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"'"
