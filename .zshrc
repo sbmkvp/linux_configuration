@@ -126,7 +126,6 @@ if [[ -v STY ]]; then
 else
 	PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
 fi
-export STYN="$(echo $STY | awk -F'.' '{if($2) print $2}')"
 
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 clear
