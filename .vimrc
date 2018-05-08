@@ -74,20 +74,18 @@ map <tab>p :bprevious<CR>
 map <tab>l :buffers<CR>:b
 function! s:goyo_enter()
     colorscheme pencil
-	:EnableAutocorrect
 	set tw=0
 endfunction
 function! s:goyo_leave()
     colorscheme badwolf
-	:DisableAutocorrect
 	set tw=80
 endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 map go :Goyo<CR>
 map gl :GitGutter<CR>
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
+" :augroup numbertoggle
+" :  autocmd!
+" :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+" :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+" :augroup END
