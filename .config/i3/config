@@ -28,6 +28,8 @@ font pango:monospace 8
 
 exec --no-startup-id "setxkbmap -layout gb"
 exec --no-startup-id "setxkbmap -option caps:escape"
+exec --no-startup-id "xmodmap -e 'keycode 108 = Super_R'"
+exec --no-startup-id "xset -r 108"
 exec --no-startup-id "dunst"
 exec --no-startup-id "xrandr --output DVI-I-1 --pos 0x0 --output DP-4 --right-of DVI-I-1; ~/.fehbg"
 exec --no-startup-id "sleep 1; setxkbmap -layout gb; setxkbmap -option caps:escape"
@@ -46,10 +48,6 @@ gaps inner 10
 gaps outer 0
 smart_gaps on
 
-# start a terminal
-# bindsym $mod+Return exec termite
-# bindsym $mod+Shift+Return exec chromium
-
 # kill focused window
 bindsym $mod+q kill
 
@@ -57,7 +55,9 @@ bindsym $mod+q kill
 bindsym $mod+Return exec --no-startup-id "termite"
 bindsym $mod+Shift+Return exec --no-startup-id "qutebrowser"
 bindsym $mod+space exec --no-startup-id "rofi -show run -display-run '>>> ' -width 400 -theme ~/.config/rofi/bala.rasi"
-bindsym $mod+Shift+space exec --no-startup-id "rofi -width 400 -show window -display-window '$$$ ' -theme ~/.config/rofi/bala.rasi"
+bindsym $mod+o exec --no-startup-id "rofi -show run -display-run '>>> ' -width 400 -theme ~/.config/rofi/bala.rasi"
+bindsym $mod+Shift+space exec --no-startup-id "rofi -width 400 -show window -display-window 'switch to ' -theme ~/.config/rofi/bala.rasi"
+bindsym $mod+Shift+o exec --no-startup-id "rofi -width 400 -show window -display-window 'switch to ' -theme ~/.config/rofi/bala.rasi"
 bindsym $mod+Shift+m move scratchpad
 bindsym $mod+m scratchpad show
 bindsym $mod+n sticky toggle
@@ -125,15 +125,15 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+z focus child
 
-set $ws1 "1:General"
-set $ws2 "2:Internet"
-set $ws3 "3:Work"
-set $ws4 "4:Media"
-set $ws5 "5:Comms"
-set $ws6 "6:Virtual"
-set $ws7 "7:Remote"
-set $ws8 "8:Reading"
-set $ws9 "9:Writing"
+set $ws1 "1:  "
+set $ws2 "2:  "
+set $ws3 "3:  "
+set $ws4 "4:  "
+set $ws5 "5:  "
+set $ws6 "6:  "
+set $ws7 "7:  "
+set $ws8 "8:  "
+set $ws9 "9:  "
 
 bindsym $mod+Shift+T exec --no-startup-id i3-input -F 'rename workspace to "%s"' -P ''
 
@@ -147,7 +147,6 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-# bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -159,7 +158,6 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
-# bindsym $mod+Shift+0 move container to workspace 10
 
 # Screenshot tool
 bindsym --release $mod+x exec --no-startup-id scrot -s ~/Media/Screenshots/%Y-%m-%d-%H%M%S.png
@@ -176,34 +174,21 @@ bindsym $mod+equal exec "pactl set-sink-volume 0 +5%"
 bindsym $mod+minus exec "pactl set-sink-volume 0 -5%"
 bindsym $mod+0 exec pactl set-sink-mute 0 toggle
 
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-msg exit"
+bindsym $mod+Shift+e exec "i3-msg exit"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width 10 px or 1 ppt
         bindsym j resize grow height 10 px or 1 ppt
         bindsym k resize shrink height 10 px or 1 ppt
         bindsym l resize grow width 10 px or 1 ppt
-
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 1 ppt
         bindsym Down resize grow height 10 px or 1 ppt
         bindsym Up resize shrink height 10 px or 1 ppt
         bindsym Right resize grow width 10 px or 1 ppt
-
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
