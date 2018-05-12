@@ -27,3 +27,7 @@ set mail_check=60
 set timeout=10
 set copy=no
 color normal default default
+set sidebar_visible=yes
+bind index,pager \ch sidebar-prev
+bind index,pager \cl sidebar-next
+bind index,pager \co sidebar-open
