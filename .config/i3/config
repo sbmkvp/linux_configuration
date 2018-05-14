@@ -16,11 +16,13 @@ default_border none
 focus_follows_mouse yes
 gaps inner 10
 gaps outer 0
-# smart_gaps on
+smart_gaps on
 
 bindsym $mod+Return exec --no-startup-id "termite"
 bindsym $mod+Shift+Return exec --no-startup-id "qutebrowser"
+bindsym $mod+o exec --no-startup-id "rofi -show run -display-run '>>> ' -width 400 -theme ~/.config/rofi/bala.rasi"
 bindsym $mod+space exec --no-startup-id "rofi -show run -display-run '>>> ' -width 400 -theme ~/.config/rofi/bala.rasi"
+bindsym $mod+Shift+o exec --no-startup-id "rofi -width 400 -show window -display-window '$$$ ' -theme ~/.config/rofi/bala.rasi"
 bindsym $mod+Shift+space exec --no-startup-id "rofi -width 400 -show window -display-window '$$$ ' -theme ~/.config/rofi/bala.rasi"
 bindsym $mod+F3 exec --no-startup-id "pactl set-sink-volume 0 +5%"
 bindsym $mod+F2 exec --no-startup-id "pactl set-sink-volume 0 -5%"
