@@ -1,3 +1,4 @@
+#! /bin/bash
 set $mod Mod4
 font pango:monospace 8
 exec --no-startup-id "setxkbmap -layout gb"
@@ -107,7 +108,7 @@ bindsym $mod+bracketright exec playerctl next
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-msg exit"
+# bindsym $mod+Shift+e exec "i3-msg exit"
 bindsym $mod+r mode "resize"
 
 mode "resize" {
@@ -141,4 +142,4 @@ bar {
 	}
 }
 
-bindsym $mod+Ctrl+0 exec --no-startup-id "xdotool mousemove --screen 1 500 500 && xdotool getmouselocation | awk -F' ' '{print $4}' | awk -F':' '{print $2}' | xargs xdotool windowfocus"
+bindsym --release $mod+Shift+w exec --no-startup-id goto
