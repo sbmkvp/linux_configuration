@@ -328,5 +328,5 @@ c.fonts.completion.entry = '8pt monospace'
 
 # Bindings for normal mode
 config.bind('xb', 'config-cycle statusbar.hide')
-config.bind('xt', 'config-cycle tabs.show always switching')
-config.bind('xx', 'config-cycle statusbar.hide ;; config-cycle tabs.show always switching')
+config.bind('xt', 'config-cycle tabs.show always never')
+config.bind('xx', 'config-cycle statusbar.hide ;; config-cycle tabs.show always never')
