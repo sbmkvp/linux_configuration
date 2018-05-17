@@ -142,4 +142,6 @@ bar {
 	}
 }
 
-bindsym --release $mod+Shift+w exec --no-startup-id goto
+bindsym --release $mod+Ctrl+1 exec --no-startup-id goto1
+bindsym --release $mod+Ctrl+2 exec --no-startup-id goto2
+bindsym --release $mod+Ctrl+3 exec --no-startup-id goto3
