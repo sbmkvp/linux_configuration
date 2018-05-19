@@ -24,7 +24,7 @@ wireless _first_ {
 }
 
 battery all {
-        format = " %status%percentage (%remaining) " 
+        format = " %status %percentage (%remaining) " 
 		hide_seconds = true
 		status_chr = "  "
 		status_unk = "  "
@@ -33,7 +33,7 @@ battery all {
 }
 
 tztime local {
-        format = " %a %d %b %H:%M:%S "
+        format = " %d %b %a %H:%M "
 }
 
 volume master {

@@ -101,6 +101,19 @@ c.downloads.position = 'bottom'
 # Type: Int
 c.downloads.remove_finished = 0
 
+# Automatically enter insert mode if an editable element is focused
+# after loading the page.
+# Type: Bool
+c.input.insert_mode.auto_load = True
+
+# Enter insert mode if an editable element is clicked.
+# Type: Bool
+c.input.insert_mode.auto_enter = True
+
+# Leave insert mode if a non-editable element is clicked.
+# Type: Bool
+c.input.insert_mode.auto_leave = False
+
 # Show a scrollbar.
 # Type: Bool
 c.scrolling.bar = False
@@ -112,7 +125,7 @@ c.scrolling.smooth = True
 
 # Hide the statusbar unless a message is shown.
 # Type: Bool
-c.statusbar.hide = True
+c.statusbar.hide = False
 
 # Position of the status bar.
 # Type: VerticalPosition
@@ -153,7 +166,7 @@ c.tabs.position = 'top'
 #   - never: Always hide the tab bar.
 #   - multiple: Hide the tab bar if only one tab is open.
 #   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'switching'
+c.tabs.show = 'always'
 
 # Duration (in milliseconds) to show the tab bar before hiding it when
 # tabs.show is set to 'switching'.
@@ -315,5 +328,5 @@ c.fonts.completion.entry = '8pt monospace'
 
 # Bindings for normal mode
 config.bind('xb', 'config-cycle statusbar.hide')
-config.bind('xt', 'config-cycle tabs.show always switching')
-config.bind('xx', 'config-cycle statusbar.hide ;; config-cycle tabs.show always switching')
+config.bind('xt', 'config-cycle tabs.show always never')
+config.bind('xx', 'config-cycle statusbar.hide ;; config-cycle tabs.show always never')
