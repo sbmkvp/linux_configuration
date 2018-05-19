@@ -11,6 +11,7 @@ Plugin 'sjl/badwolf'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'sedm0784/vim-you-autocorrect'
+Plugin 'eiginn/netrw'
 call vundle#end()
 filetype plugin indent on
 syntax on

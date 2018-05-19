@@ -97,9 +97,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 stty -ixon
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx &> /dev/null
-fi
+# if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+#   exec startx &> /dev/null
+# fi
 
 alias mac_sst_start='ssh -D 8080 -f -q -C -N ucfnbso@arch.geog.ucl.ac.uk'
 alias mac_proxy_on="sudo networksetup -setsocksfirewallproxy Wi-Fi localhost 8080"
