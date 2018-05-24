@@ -146,9 +146,13 @@ c.statusbar.position = 'bottom'
 #   - progress: Progress bar for the current page loading.
 c.statusbar.widgets = ['url', 'scroll', 'history', 'tabs', 'progress']
 
-# Show favicons in the tab bar.
-# Type: Bool
-c.tabs.favicons.show = False
+# When to show favicons in the tab bar.
+# Type: String
+# Valid values:
+#   - always: Always show favicons.
+#   - never: Always hide favicons.
+#   - pinned: Show favicons only on pinned tabs.
+c.tabs.favicons.show = 'never'
 
 # Position of the tab bar.
 # Type: Position

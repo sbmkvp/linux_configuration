@@ -133,9 +133,5 @@ else
 	PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
 fi
 
-# TMOUT=300
-# readonly TMOUT
-# export TMOUT
-
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 clear

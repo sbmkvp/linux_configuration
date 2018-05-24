@@ -42,7 +42,7 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 set backspace=indent,eol,start
 set cursorline
-" set cursorcolumn
+set cursorcolumn
 set ruler
 nnoremap ; :
 set tabstop=4
@@ -56,7 +56,6 @@ set ignorecase
 set smartcase
 set sidescrolloff=10
 set scrolloff=10
-" set tw=80
 command! -nargs=+ Silent execute 'silent <args>' | redraw!
 set noerrorbells visualbell t_vb=
 highlight OverLength ctermbg=darkred ctermfg=grey
@@ -75,18 +74,11 @@ map <tab>p :bprevious<CR>
 map <tab>l :buffers<CR>:b
 function! s:goyo_enter()
     colorscheme pencil
-	" set tw=0
 endfunction
 function! s:goyo_leave()
     colorscheme badwolf
-	" set tw=80
 endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 map go :Goyo<CR>
 map gl :GitGutter<CR>
-" :augroup numbertoggle
-" :  autocmd!
-" :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-" :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-" :augroup END
