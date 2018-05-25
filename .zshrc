@@ -59,10 +59,7 @@ ZSH_THEME=""
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	npm
 	vi-mode
-	screen
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,13 +98,11 @@ if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx &> /dev/null
 fi
 
-alias mac_sst_start='ssh -D 8080 -f -q -C -N ucfnbso@arch.geog.ucl.ac.uk'
-alias mac_proxy_on="sudo networksetup -setsocksfirewallproxy Wi-Fi localhost 8080"
-alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
 alias cdrcdesk="ssh -CYt ucfnbso@square.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
 alias cdrcdesk_a="ssh -CYt ucfnbso@arch.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
 alias cdrcdesk_t="ssh -CYt ucfnbso@triangle.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
 alias cdrcdesk_c="ssh -CYt ucfnbso@circle.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
+
 if [[ $HOST = "cdrc-desk" ]]; then
 	alias cdrcdb="ssh -C ucfnbso@cdrc-db.geog.ucl.ac.uk";
 else
@@ -116,14 +111,10 @@ else
 	alias cdrcdb_t="ssh -Ct ucfnbso@triangle.geog.ucl.ac.uk ssh -C ucfnbso@cdrc-db.geog.ucl.ac.uk";
 	alias cdrcdb_c="ssh -Ct ucfnbso@circle.geog.ucl.ac.uk ssh -C ucfnbso@cdrc-db.geog.ucl.ac.uk";
 fi
-alias garageinc="ssh -C bala@164.132.196.212"
-alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"'"
 
-PATH="/home/ucfnbso/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/ucfnbso/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/ucfnbso/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/ucfnbso/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/ucfnbso/perl5"; export PERL_MM_OPT;
+alias garageinc="ssh -C bala@164.132.196.212"
+
+alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"'"
 
 alias web=qutebrowser
 
@@ -132,10 +123,6 @@ if [ -n "${STY+1}" ]; then
 else
 	PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
 fi
-
-# TMOUT=300
-# readonly TMOUT
-# export TMOUT
 
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 clear
