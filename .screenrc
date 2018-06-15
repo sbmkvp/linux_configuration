@@ -1,26 +1,21 @@
 layout save default
 startup_message off
 term xterm-256color
-# hardstatus ignore
-# attrcolor b ".I"
-# defbce "on"
+hardstatus ignore
+attrcolor b ".I"
+defbce "on"
 # termcapinfo xterm* 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 # termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-#
-#
-# bindkey "^[[1;5D" focus left
-# bindkey "^[[1;5C" focus right
-# bindkey "^[[1;5A" focus up
-# bindkey "^[[1;5B" focus down
-#
-# bindkey "^[OR" prev
-# bindkey "^[OS" next
-#
-# bindkey "^[OQ" eval "command -c rsz"
-# bind -c rsz h eval "resize -h -1" "command -c rsz"
-# bind -c rsz k eval "resize -v -1" "command -c rsz"
-# bind -c rsz j eval "resize -v +1" "command -c rsz"
-# bind -c rsz l eval "resize -h +1" "command -c rsz"
-#
-# caption string "%{00} "
-# rendition so =00
+bindkey "^[[1;5D" focus left
+bindkey "^[[1;5C" focus right
+bindkey "^[[1;5A" focus up
+bindkey "^[[1;5B" focus down
+bindkey "^[OR" prev
+bindkey "^[OS" next
+bindkey "^[OQ" eval "command -c rsz"
+bind -c rsz h eval "resize -h -1" "command -c rsz"
+bind -c rsz k eval "resize -v -1" "command -c rsz"
+bind -c rsz j eval "resize -v +1" "command -c rsz"
+bind -c rsz l eval "resize -h +1" "command -c rsz"
+caption string "%{00} "
+rendition so =00
