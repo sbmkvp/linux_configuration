@@ -98,10 +98,10 @@ if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
   exec startx &> /dev/null
 fi
 
-alias cdrcdesk="ssh -CYt ucfnbso@square.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
-alias cdrcdesk_a="ssh -CYt ucfnbso@arch.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
-alias cdrcdesk_t="ssh -CYt ucfnbso@triangle.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
-alias cdrcdesk_c="ssh -CYt ucfnbso@circle.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
+alias cdrcdesk="ssh -CYt ucfnbso@squarepeg.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
+alias cdrcdesk_a="ssh -CYt ucfnbso@archibald.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
+alias cdrcdesk_t="ssh -CYt ucfnbso@triangleting.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
+alias cdrcdesk_c="ssh -CYt ucfnbso@roundabout.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
 
 if [[ $HOST = "cdrc-desk" ]]; then
 	alias cdrcdb="ssh -C ucfnbso@cdrc-db.geog.ucl.ac.uk";

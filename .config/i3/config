@@ -11,6 +11,8 @@ exec --no-startup-id "sleep 1; setxkbmap -layout gb; setxkbmap -option caps:esca
 floating_modifier $mod
 for_window [class="Termite"] border pixel 10
 # for_window [class=.] floating enable
+for_window [class="VirtualBox Machine"] fullscreen enable
+for_window [class="VirtualBox Machine"] move container to workspace $ws9
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Kodi"] floating enable
 default_border none
