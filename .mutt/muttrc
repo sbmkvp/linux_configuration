@@ -30,6 +30,9 @@ set quit=ask-yes
 bind index,pager \ch sidebar-prev
 bind index,pager \cl sidebar-next
 bind index,pager \co sidebar-open
+set mailcap_path="~/.mutt/mailcap"
+auto_view text/html
+alternative_order text/plain text/enriched text/html
 
 color normal        brightyellow    default
 color error         red             default
