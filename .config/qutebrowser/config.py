@@ -125,7 +125,7 @@ c.scrolling.smooth = True
 
 # Hide the statusbar unless a message is shown.
 # Type: Bool
-c.statusbar.hide = False
+c.statusbar.hide = True
 
 # Position of the status bar.
 # Type: VerticalPosition
@@ -170,7 +170,7 @@ c.tabs.position = 'top'
 #   - never: Always hide the tab bar.
 #   - multiple: Hide the tab bar if only one tab is open.
 #   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'always'
+c.tabs.show = 'never'
 
 # Duration (in milliseconds) to show the tab bar before hiding it when
 # tabs.show is set to 'switching'.
@@ -207,6 +207,10 @@ c.url.start_pages = 'about:blank'
 # Default zoom level.
 # Type: Perc
 c.zoom.default = '90%'
+
+# Available zoom levels.
+# Type: List of Perc
+c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '80', '85', '90%', '100%', '110%', '125%', '150%', '175%', '200%', '250%', '300%', '400%', '500%']
 
 # Background color of the completion widget for odd rows.
 # Type: QssColor
