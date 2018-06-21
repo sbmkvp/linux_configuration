@@ -31,6 +31,7 @@ bind index,pager \co sidebar-open
 set mailcap_path="~/.mutt/mailcap"
 auto_view text/html
 alternative_order text/plain text/enriched text/html
+set sort=reverse-date-sent
 
 color normal        brightyellow    default
 color error         red             default
