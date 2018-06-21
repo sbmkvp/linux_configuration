@@ -19,7 +19,6 @@ set imap_keepalive = 900
 set editor = vim
 bind pager j next-line
 bind pager k previous-line
-set sort_aux = reverse-date-sent
 unset imap_passive        
 set imap_check_subscribed
 set mail_check=60
