@@ -22,7 +22,7 @@ set incsearch
 set laststatus=2
 set history=1000
 set relativenumber
-set synmaxcol=200
+" set synmaxcol=200
 set number
 colorscheme badwolf
 noremap <Up> <NOP>
