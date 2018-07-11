@@ -11,6 +11,8 @@ Plugin 'sjl/badwolf'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'sedm0784/vim-you-autocorrect'
+Plugin 'gu-fan/simpleterm.vim'
+Plugin 'vimwiki/vimwiki'
 call vundle#end()
 filetype plugin indent on
 syntax on
@@ -82,3 +84,7 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 map go :Goyo<CR>
 map gl :GitGutter<CR>
+
+:map <F7> :w !xclip<CR><CR>
+:vmap <F7> "*y
+:map <S-F7> :r!xclip -o<CR>
