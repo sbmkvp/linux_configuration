@@ -12,7 +12,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'sedm0784/vim-you-autocorrect'
 Plugin 'gu-fan/simpleterm.vim'
-Plugin 'vimwiki/vimwiki'
 call vundle#end()
 filetype plugin indent on
 syntax on
@@ -69,7 +68,7 @@ map <C-L> "kyy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@k
 vmap <C-L> "xy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@x."\n"),"$"))<CR>j
 map <C-M><C-M> :echo system("screen -S $STY -p R -X stuff ".shellescape("source('".expand('%:t')."')\n"))<CR><CR>
 set t_Co=256
-set spelllang=en
+set spelllang=en_us
 map <tab><tab> <C-^>
 map <tab>n :bNext<CR>
 map <tab>p :bprevious<CR>
@@ -84,7 +83,6 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 map go :Goyo<CR>
 map gl :GitGutter<CR>
-
 :map <F7> :w !xclip<CR><CR>
 :vmap <F7> "*y
 :map <S-F7> :r!xclip -o<CR>
