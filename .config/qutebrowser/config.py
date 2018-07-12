@@ -6,6 +6,29 @@
 # Uncomment this to still load settings configured via autoconfig.yml
 # config.load_autoconfig()
 
+# How to open links in an existing instance if a new one is launched.
+# This happens when e.g. opening a link from a terminal. See
+# `new_instance_open_target_window` to customize in which window the
+# link is opened in.
+# Type: String
+# Valid values:
+#   - tab: Open a new tab in the existing window and activate the window.
+#   - tab-bg: Open a new background tab in the existing window and activate the window.
+#   - tab-silent: Open a new tab in the existing window without activating the window.
+#   - tab-bg-silent: Open a new background tab in the existing window without activating the window.
+#   - window: Open in a new window.
+c.new_instance_open_target = 'window'
+
+# Which window to choose when opening links as new tabs. When
+# `new_instance_open_target` is not set to `window`, this is ignored.
+# Type: String
+# Valid values:
+#   - first-opened: Open new tabs in the first (oldest) opened window.
+#   - last-opened: Open new tabs in the last (newest) opened window.
+#   - last-focused: Open new tabs in the most recently focused window.
+#   - last-visible: Open new tabs in the most recently visible window.
+c.new_instance_open_target_window = 'last-focused'
+
 # Backend to use to display websites. qutebrowser supports two different
 # web rendering engines / backends, QtWebKit and QtWebEngine. QtWebKit
 # was discontinued by the Qt project with Qt 5.6, but picked up as a
@@ -146,6 +169,10 @@ c.statusbar.position = 'bottom'
 #   - progress: Progress bar for the current page loading.
 c.statusbar.widgets = ['url', 'scroll', 'history', 'tabs', 'progress']
 
+# Open new tabs (middleclick/ctrl+click) in the background.
+# Type: Bool
+c.tabs.background = False
+
 # When to show favicons in the tab bar.
 # Type: String
 # Valid values:
@@ -177,6 +204,10 @@ c.tabs.show = 'never'
 # Type: Int
 c.tabs.show_switching_delay = 1000
 
+# Open a new window for every tab.
+# Type: Bool
+c.tabs.tabs_are_windows = True
+
 # Alignment of the text inside of tabs.
 # Type: TextAlignment
 # Valid values:
@@ -188,6 +219,11 @@ c.tabs.title.alignment = 'center'
 # Width (in pixels) of the progress indicator (0 to disable).
 # Type: Int
 c.tabs.indicator.width = 0
+
+# Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
+# for a blank page.
+# Type: FuzzyUrl
+c.url.default_page = 'http://www.e-try.com/black.htm'
 
 # Search engines which can be used via the address bar. Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -202,7 +238,7 @@ c.url.searchengines = {'DEFAULT': 'https://google.co.uk/search?hl=en&q={}'}
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = 'about:blank'
+c.url.start_pages = 'http://www.e-try.com/black.htm'
 
 # Default zoom level.
 # Type: Perc
