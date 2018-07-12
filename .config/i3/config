@@ -130,7 +130,8 @@ client.placeholder      #191919 #191919 #555555 #191919   #191919
 
 bindsym $mod+b bar mode toggle
 bar {
-	status_command i3status
+	# status_command i3status
+	status_command i3blocks -c ~/.config/i3blocks/config
 	modifier Mod1
 	position bottom
 	# mode hide

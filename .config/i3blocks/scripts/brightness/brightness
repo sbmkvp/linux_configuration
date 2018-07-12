@@ -1,0 +1,4 @@
+#! /bin/bash
+
+BRIGHTNESS=$(xbacklight)
+printf "%d\n" $BRIGHTNESS 2> /dev/null

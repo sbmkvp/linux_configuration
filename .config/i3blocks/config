@@ -1,0 +1,65 @@
+# i3blocks config file
+# List of valid properties:
+
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+command=~/.config/i3blocks/scripts/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=20
+markup=pango
+
+[disk]
+label= 
+interval=5
+
+[memory]
+label= 
+interval=1
+
+[cpu_usage]
+label= 
+interval=1
+
+[temperature]
+command=echo "$(printf %d $(~/.config/i3blocks/scripts/$BLOCK_NAME/$BLOCK_NAME))°C"
+label= 
+interval=5
+
+[brightness]
+label=
+command=echo "$(printf %d $(xbacklight))%"
+interval=1
+
+[volume]
+command=~/.config/i3blocks/scripts/volume/volume pulse
+label= 
+interval=1
+
+[iface]
+interval=5
+color=#00FF00
+separator=false
+separator_block_width=10
+[wifi]
+label= 
+instance=wlp2s0
+interval=5
+
+[battery2]
+interval=5
+
+[time]
+command=date '+%a %d %b %H:%M:%S'
+interval=1
