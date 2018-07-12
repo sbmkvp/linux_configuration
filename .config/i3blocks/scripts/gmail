@@ -1,0 +1,8 @@
+#! /bin/sh
+
+COUNT=$(curl -u "sbm.kvp@gmail.com:$(gpg -dq $HOME/.mutt/pwd.gpg)" --silent "https://mail.google.com/mail/feed/atom" | perl -ne 'print "$2\n" if /<(fullcount)>(.*)<\/\1>/;')
+
+if [ $COUNT -gt 0 ]; 
+	then
+	echo "<span color='orange'> $COUNT</span>";
+fi

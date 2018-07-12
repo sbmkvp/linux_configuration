@@ -16,9 +16,25 @@
 # signal
 # urgent
 
+#
+# [pacman-updates]
+# label=
+# # command=~/.config/i3blocks/scripts/arch-update/arch-update.py -a -b "#5fff5f" -u "#FFFF85" -w "^linux.*" "^pacman.*"
+# interval= 3600
+#
 command=~/.config/i3blocks/scripts/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=20
 markup=pango
+
+[gmail]
+command=~/.config/i3blocks/scripts/gmail
+interval=3600
+separator=true
+
+[update]
+command=~/.config/i3blocks/scripts/updates
+interval=60
+separator=true
 
 [disk]
 label= 
@@ -50,16 +66,9 @@ interval=1
 [iface]
 interval=5
 color=#00FF00
-separator=false
-separator_block_width=10
-[wifi]
-label= 
-instance=wlp2s0
-interval=5
 
 [battery2]
 interval=5
 
-[time]
-command=date '+%a %d %b %H:%M:%S'
+[calendar]
 interval=1

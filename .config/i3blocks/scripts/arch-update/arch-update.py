@@ -48,7 +48,7 @@ def create_argparse():
 
 
 def get_updates():
-    output = check_output(['checkupdates']).decode('utf-8')
+    output = check_output(['pacman','-Qu']).decode('utf-8')
     if not output:
         return []
 
@@ -62,7 +62,7 @@ def get_updates():
 def get_aur_updates():
     output = ''
     try:
-        output = check_output(['yaourt', '-Qua']).decode('utf-8')
+        output = check_output(['aurman', '-Qua']).decode('utf-8')
     except subprocess.CalledProcessError as exc:
         # yaourt exits with 1 and no output if no updates are available.
         # we ignore this case and go on
