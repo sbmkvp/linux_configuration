@@ -28,12 +28,17 @@ markup=pango
 
 [gmail]
 command=~/.config/i3blocks/scripts/gmail
-interval=3600
+interval=60
+separator=true
+
+[gcal]
+command=~/.config/i3blocks/scripts/gcal
+interval=60
 separator=true
 
 [update]
 command=~/.config/i3blocks/scripts/updates
-interval=60
+interval=3600
 separator=true
 
 [disk]

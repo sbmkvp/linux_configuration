@@ -1,0 +1,8 @@
+#! /bin/sh
+
+COUNT=$(gcalcli --tsv --calendar 'S. Bala Murugan' agenda "$(date '+%Y-%m-%dT%-H:%M')" "$(date '+%Y-%m-%dT%-H:%M' --date='1 day')" | wc -l)
+
+if [ $COUNT -gt 0 ]; 
+	then
+	echo "<span color='orange'> $COUNT</span>";
+fi
