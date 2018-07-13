@@ -36,11 +36,6 @@ command=~/.config/i3blocks/scripts/gcal
 interval=60
 separator=true
 
-[update]
-command=~/.config/i3blocks/scripts/updates
-interval=3600
-separator=true
-
 [disk]
 label= 
 interval=5
