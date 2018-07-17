@@ -223,7 +223,7 @@ c.tabs.indicator.width = 0
 # Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 # for a blank page.
 # Type: FuzzyUrl
-c.url.default_page = 'http://www.e-try.com/black.htm'
+c.url.default_page = 'about:blank'
 
 # Search engines which can be used via the address bar. Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -238,7 +238,7 @@ c.url.searchengines = {'DEFAULT': 'https://google.co.uk/search?hl=en&q={}'}
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = 'http://www.e-try.com/black.htm'
+c.url.start_pages = 'about:blank'
 
 # Default zoom level.
 # Type: Perc

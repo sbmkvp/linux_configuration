@@ -61,7 +61,7 @@ print "$temperature\n";
 # Print color, if needed
 if ($temperature >= $t_crit) {
     print "#FF0000\n";
-    exit 33;
+    # exit 33;
 } elsif ($temperature >= $t_warn) {
     print "#FFFC00\n";
 }

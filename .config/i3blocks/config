@@ -67,7 +67,7 @@ interval=1
 interval=5
 color=#00FF00
 
-[battery2]
+[battery]
 interval=5
 
 [calendar]
