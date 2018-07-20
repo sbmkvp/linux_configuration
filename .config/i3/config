@@ -15,6 +15,8 @@ for_window [class="VirtualBox Machine"] move container to workspace $ws9
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Kodi"] floating enable
 for_window [class="Yad"] floating enable
+for_window [class="footfall-terminal"] floating enable
+for_window [class="QtQmlViewer"] floating enable
 default_border none
 focus_follows_mouse yes
 gaps inner 10
@@ -131,6 +133,7 @@ bar {
 	modifier Mod1
 	position bottom
 	strip_workspace_numbers yes
+	mode hide
 	colors {
 		background #222222
 		statusline #bbbbbb

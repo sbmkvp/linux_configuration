@@ -148,7 +148,7 @@ c.scrolling.smooth = True
 
 # Hide the statusbar unless a message is shown.
 # Type: Bool
-c.statusbar.hide = True
+c.statusbar.hide = False
 
 # Position of the status bar.
 # Type: VerticalPosition
@@ -197,16 +197,12 @@ c.tabs.position = 'top'
 #   - never: Always hide the tab bar.
 #   - multiple: Hide the tab bar if only one tab is open.
 #   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'never'
+c.tabs.show = 'always'
 
 # Duration (in milliseconds) to show the tab bar before hiding it when
 # tabs.show is set to 'switching'.
 # Type: Int
 c.tabs.show_switching_delay = 1000
-
-# Open a new window for every tab.
-# Type: Bool
-c.tabs.tabs_are_windows = True
 
 # Alignment of the text inside of tabs.
 # Type: TextAlignment
@@ -242,7 +238,7 @@ c.url.start_pages = 'about:blank'
 
 # Default zoom level.
 # Type: Perc
-c.zoom.default = '90%'
+c.zoom.default = '75%'
 
 # Available zoom levels.
 # Type: List of Perc
@@ -250,23 +246,23 @@ c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '80', '85', '90%', '100%', '
 
 # Background color of the completion widget for odd rows.
 # Type: QssColor
-c.colors.completion.odd.bg = '#333333'
+c.colors.completion.odd.bg = '#000000'
 
 # Top border color of the completion widget category headers.
 # Type: QssColor
-c.colors.completion.category.border.top = '#333333'
+c.colors.completion.category.border.top = '#000000'
 
 # Foreground color of the selected completion item.
 # Type: QtColor
-c.colors.completion.item.selected.fg = 'black'
+c.colors.completion.item.selected.fg = '#000000'
 
 # Background color of the selected completion item.
 # Type: QssColor
-c.colors.completion.item.selected.bg = '#888888'
+c.colors.completion.item.selected.bg = '#000000'
 
 # Top border color of the completion widget category headers.
 # Type: QssColor
-c.colors.completion.item.selected.border.top = '#888888'
+c.colors.completion.item.selected.border.top = '#000000'
 
 # Bottom border color of the selected completion item.
 # Type: QssColor
@@ -274,65 +270,69 @@ c.colors.completion.item.selected.border.bottom = '#888888'
 
 # Foreground color of the statusbar.
 # Type: QssColor
-c.colors.statusbar.normal.fg = '#aaaaaa'
+c.colors.statusbar.normal.fg = '#ffffff'
 
 # Background color of the statusbar.
 # Type: QssColor
-c.colors.statusbar.normal.bg = '#333333'
+c.colors.statusbar.normal.bg = '#000000'
 
 # Background color of the statusbar in insert mode.
 # Type: QssColor
-c.colors.statusbar.insert.bg = '#222222'
+c.colors.statusbar.insert.bg = '#000000'
 
 # Foreground color of the statusbar in passthrough mode.
 # Type: QssColor
-c.colors.statusbar.passthrough.fg = '#aaaaaa'
+c.colors.statusbar.passthrough.fg = '#ffffff'
 
 # Background color of the statusbar in private browsing mode.
 # Type: QssColor
-c.colors.statusbar.private.bg = '#111111'
+c.colors.statusbar.private.bg = '#662222'
 
 # Foreground color of the statusbar in command mode.
 # Type: QssColor
-c.colors.statusbar.command.fg = '#aaaaaa'
+c.colors.statusbar.command.fg = '#ffffff'
 
 # Background color of the statusbar in command mode.
 # Type: QssColor
-c.colors.statusbar.command.bg = '#333333'
+c.colors.statusbar.command.bg = '#000000'
 
 # Foreground color of the statusbar in private browsing + command mode.
 # Type: QssColor
-c.colors.statusbar.command.private.fg = '#aaaaaa'
+c.colors.statusbar.command.private.fg = '#ffffff'
 
 # Background color of the statusbar in private browsing + command mode.
 # Type: QssColor
-c.colors.statusbar.command.private.bg = '#111111'
+c.colors.statusbar.command.private.bg = '#662222'
 
 # Foreground color of the statusbar in caret mode.
 # Type: QssColor
-c.colors.statusbar.caret.fg = '#aaaaaa'
+c.colors.statusbar.caret.fg = '#ffffff'
 
 # Background color of the progress bar.
 # Type: QssColor
-c.colors.statusbar.progress.bg = '#888888'
+c.colors.statusbar.progress.bg = '#aaaaaa'
 
 # Default foreground color of the URL in the statusbar.
 # Type: QssColor
 c.colors.statusbar.url.fg = 'white'
 
+# Foreground color of the URL in the statusbar for hovered links.
+# Type: QssColor
+c.colors.statusbar.url.hover.fg = '#ffffff'
+
 # Foreground color of the URL in the statusbar on successful load
 # (http).
 # Type: QssColor
-c.colors.statusbar.url.success.http.fg = '#aaaaaa'
+c.colors.statusbar.url.success.http.fg = '#ffffff'
 
 # Foreground color of the URL in the statusbar on successful load
 # (https).
 # Type: QssColor
-c.colors.statusbar.url.success.https.fg = '#aaaaaa'
+c.colors.statusbar.url.success.https.fg = '#ffffff'
 
 # Background color of the tab bar.
 # Type: QtColor
-c.colors.tabs.bar.bg = '#555555'
+c.colors.tabs.bar.bg = '#000000'
 
 # Foreground color of unselected odd tabs.
 # Type: QtColor
@@ -340,7 +340,7 @@ c.colors.tabs.odd.fg = '#bbbbbb'
 
 # Background color of unselected odd tabs.
 # Type: QtColor
-c.colors.tabs.odd.bg = '#555555'
+c.colors.tabs.odd.bg = '#000000'
 
 # Foreground color of unselected even tabs.
 # Type: QtColor
@@ -348,27 +348,35 @@ c.colors.tabs.even.fg = '#bbbbbb'
 
 # Background color of unselected even tabs.
 # Type: QtColor
-c.colors.tabs.even.bg = '#555555'
+c.colors.tabs.even.bg = '#000000'
 
 # Foreground color of selected odd tabs.
 # Type: QtColor
-c.colors.tabs.selected.odd.fg = '#eeeeee'
+c.colors.tabs.selected.odd.fg = '#ffffff'
 
 # Background color of selected odd tabs.
 # Type: QtColor
-c.colors.tabs.selected.odd.bg = '#555555'
+c.colors.tabs.selected.odd.bg = '#000000'
 
 # Foreground color of selected even tabs.
 # Type: QtColor
-c.colors.tabs.selected.even.fg = '#eeeeee'
+c.colors.tabs.selected.even.fg = '#ffffff'
 
 # Background color of selected even tabs.
 # Type: QtColor
-c.colors.tabs.selected.even.bg = '#555555'
+c.colors.tabs.selected.even.bg = '#000000'
 
 # Font used in the completion widget.
 # Type: Font
 c.fonts.completion.entry = '8pt monospace'
+
+# Font used in the statusbar.
+# Type: Font
+c.fonts.statusbar = '8pt monospace'
+
+# Font used in the tab bar.
+# Type: QtFont
+c.fonts.tabs = '8pt monospace'
 
 # Bindings for normal mode
 config.bind('xb', 'config-cycle statusbar.hide')
