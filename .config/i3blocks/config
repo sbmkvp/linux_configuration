@@ -1,0 +1,74 @@
+# i3blocks config file
+# List of valid properties:
+
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+#
+# [pacman-updates]
+# label=
+# # command=~/.config/i3blocks/scripts/arch-update/arch-update.py -a -b "#5fff5f" -u "#FFFF85" -w "^linux.*" "^pacman.*"
+# interval= 3600
+#
+command=~/.config/i3blocks/scripts/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=20
+markup=pango
+
+[gmail]
+command=~/.config/i3blocks/scripts/gmail
+interval=60
+separator=true
+
+[gcal]
+command=~/.config/i3blocks/scripts/gcal
+interval=60
+separator=true
+
+[disk]
+label= 
+interval=5
+
+[memory]
+label= 
+interval=1
+
+[cpu_usage]
+label= 
+interval=1
+
+[temperature]
+command=echo "$(printf %d $(~/.config/i3blocks/scripts/$BLOCK_NAME/$BLOCK_NAME))°C"
+label= 
+interval=5
+
+[brightness]
+label=
+command=echo "$(printf %d $(xbacklight))%"
+interval=1
+
+[volume]
+command=~/.config/i3blocks/scripts/volume/volume pulse
+label= 
+interval=1
+
+[iface]
+interval=5
+color=#00FF00
+
+[battery]
+interval=5
+
+[calendar]
+interval=1

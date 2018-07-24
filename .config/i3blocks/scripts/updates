@@ -1,0 +1,7 @@
+#! /bin/sh
+
+UPDATES=$(aurmansolver -Syu | jq -r '.[0][][].name' | wc -l)
+if [ $UPDATES -gt 0 ]; 
+	then
+	echo "<span color='orange'> $UPDATES</span>";
+fi

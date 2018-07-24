@@ -10,9 +10,13 @@ exec --no-startup-id "sleep 1; setxkbmap -layout gb; setxkbmap -option caps:esca
 
 floating_modifier $mod
 for_window [class="Termite"] border pixel 10
-# for_window [class=.] floating enable
+for_window [class="VirtualBox Machine"] fullscreen enable
+for_window [class="VirtualBox Machine"] move container to workspace $ws9
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Kodi"] floating enable
+for_window [class="Yad"] floating enable
+for_window [class="footfall-terminal"] floating enable
+for_window [class="QtQmlViewer"] floating enable
 default_border none
 focus_follows_mouse yes
 gaps inner 10
@@ -27,8 +31,6 @@ bindsym $mod+Shift+o exec --no-startup-id "rofi -width 400 -show window -display
 bindsym $mod+Shift+space exec --no-startup-id "rofi -width 400 -show window -display-window '$$$ ' -theme ~/.config/rofi/bala.rasi"
 bindsym $mod+F3 exec --no-startup-id "pactl set-sink-volume 0 +5%"
 bindsym $mod+F2 exec --no-startup-id "pactl set-sink-volume 0 -5%"
-# bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +5%"
-# bindsym $XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -5%"
 bindsym $mod+equal exec "pactl set-sink-volume 0 +5%"
 bindsym $mod+minus exec "pactl set-sink-volume 0 -5%"
 bindsym $mod+0 exec --no-startup-id "pactl set-sink-mute 0 toggle"
@@ -73,7 +75,7 @@ set $ws5 "5:  "
 set $ws6 "6:  "
 set $ws7 "7:  "
 set $ws8 "8:  "
-set $ws9 "9:  "
+set $ws9 "9:  "
 
 bindsym $mod+t exec --no-startup-id i3-input -F 'workspace "%s"' -P ''
 bindsym $mod+Shift+t exec --no-startup-id i3-input -F 'move container to workspace "%s"' -P ''
@@ -108,7 +110,6 @@ bindsym $mod+bracketright exec playerctl next
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-# bindsym $mod+Shift+e exec "i3-msg exit"
 bindsym $mod+r mode "resize"
 
 mode "resize" {
@@ -128,11 +129,11 @@ client.placeholder      #191919 #191919 #555555 #191919   #191919
 
 bindsym $mod+b bar mode toggle
 bar {
-	status_command i3status
+	status_command i3blocks
 	modifier Mod1
 	position bottom
-	mode hide
 	strip_workspace_numbers yes
+	mode hide
 	colors {
 		background #222222
 		statusline #bbbbbb
