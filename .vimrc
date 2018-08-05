@@ -12,6 +12,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'sedm0784/vim-you-autocorrect'
 Plugin 'gu-fan/simpleterm.vim'
+Plugin 'jalvesaq/Nvim-R'
 call vundle#end()
 filetype plugin indent on
 syntax on
@@ -64,11 +65,11 @@ match OverLength /\%81v./
 highlight cursorcolumn ctermbg=darkgrey
 map <C-J> gj
 map <C-K> gk
-" map <C-L> "kyy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@k),"$"))<CR>j
-" vmap <C-L> "xy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@x."\n"),"$"))<CR>j
-" map <C-M><C-M> :echo system("screen -S $STY -p R -X stuff ".shellescape("source('".expand('%:t')."')\n"))<CR><CR>
-map <C-L> :Sline<CR>j
-vmap <C-L> :Sline<CR>j
+map <C-L> "kyy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@k),"$"))<CR>j
+vmap <C-L> "xy:echo system("screen -S $STY -p R -X stuff ".escape(shellescape(@x."\n"),"$"))<CR>j
+map <C-M><C-M> :echo system("screen -S $STY -p R -X stuff ".shellescape("source('".expand('%:t')."')\n"))<CR><CR>
+" map <C-L> :Sline<CR>j
+" vmap <C-L> :Sline<CR>j
 
 set t_Co=256
 set spelllang=en_us

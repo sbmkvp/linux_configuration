@@ -238,7 +238,7 @@ c.url.start_pages = 'about:blank'
 
 # Default zoom level.
 # Type: Perc
-c.zoom.default = '75%'
+c.zoom.default = '100%'
 
 # Available zoom levels.
 # Type: List of Perc
