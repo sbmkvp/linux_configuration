@@ -124,5 +124,8 @@ else
 	PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
 fi
 
+echo -e '\033[?112c'
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 clear
+
+
