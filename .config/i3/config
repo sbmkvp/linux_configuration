@@ -9,7 +9,7 @@ exec --no-startup-id "dunst"
 exec --no-startup-id "sleep 1; setxkbmap -layout gb; setxkbmap -option caps:escape"
 
 floating_modifier $mod
-for_window [class="Termite"] border pixel 10
+# for_window [class="Termite"] border pixel 10
 for_window [class="VirtualBox Machine"] fullscreen enable
 for_window [class="VirtualBox Machine"] move container to workspace $ws9
 for_window [class="Pavucontrol"] floating enable
@@ -21,7 +21,6 @@ default_border none
 focus_follows_mouse yes
 gaps inner 10
 gaps outer 0
-smart_gaps on
 
 bindsym $mod+Return exec --no-startup-id "termite"
 bindsym $mod+Shift+Return exec --no-startup-id "qutebrowser"
@@ -130,10 +129,11 @@ client.placeholder      #191919 #191919 #555555 #191919   #191919
 bindsym $mod+b bar mode toggle
 bar {
 	status_command i3blocks
+	output DP-4
 	modifier Mod1
 	position bottom
 	strip_workspace_numbers yes
-	mode hide
+	# mode hide
 	colors {
 		background #222222
 		statusline #bbbbbb

@@ -113,10 +113,10 @@ else
 fi
 
 alias garageinc="ssh -C bala@164.132.196.212"
-
-alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"'"
-
+alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"' -v OFS=','"
 alias web=qutebrowser
+alias r=rtichoke
+
 
 if [ -n "${STY+1}" ]; then
 	PROMPT="%{$terminfo[bold]$fg[red]%}$(echo $STY | awk -F'.' '{print $2}')-%13>>%m%>> >> %{$reset_color%}"

@@ -137,14 +137,68 @@ c.input.insert_mode.auto_enter = True
 # Type: Bool
 c.input.insert_mode.auto_leave = False
 
-# Show a scrollbar.
-# Type: Bool
-c.scrolling.bar = False
+# When to show the scrollbar.
+# Type: String
+# Valid values:
+#   - always: Always show the scrollbar.
+#   - never: Never show the scrollbar.
+#   - when-searching: Show the scrollbar when searching for text in the webpage. With the QtWebKit backend, this is equal to `never`.
+c.scrolling.bar = 'never'
 
 # Enable smooth scrolling for web pages. Note smooth scrolling does not
 # work with the `:scroll-px` command.
 # Type: Bool
 c.scrolling.smooth = True
+
+# Languages to use for spell checking. You can check for available
+# languages and install dictionaries using scripts/dictcli.py. Run the
+# script with -h/--help for instructions.
+# Type: List of String
+# Valid values:
+#   - af-ZA: Afrikaans (South Africa)
+#   - bg-BG: Bulgarian (Bulgaria)
+#   - ca-ES: Catalan (Spain)
+#   - cs-CZ: Czech (Czech Republic)
+#   - da-DK: Danish (Denmark)
+#   - de-DE: German (Germany)
+#   - el-GR: Greek (Greece)
+#   - en-AU: English (Australia)
+#   - en-CA: English (Canada)
+#   - en-GB: English (United Kingdom)
+#   - en-US: English (United States)
+#   - es-ES: Spanish (Spain)
+#   - et-EE: Estonian (Estonia)
+#   - fa-IR: Farsi (Iran)
+#   - fo-FO: Faroese (Faroe Islands)
+#   - fr-FR: French (France)
+#   - he-IL: Hebrew (Israel)
+#   - hi-IN: Hindi (India)
+#   - hr-HR: Croatian (Croatia)
+#   - hu-HU: Hungarian (Hungary)
+#   - id-ID: Indonesian (Indonesia)
+#   - it-IT: Italian (Italy)
+#   - ko: Korean
+#   - lt-LT: Lithuanian (Lithuania)
+#   - lv-LV: Latvian (Latvia)
+#   - nb-NO: Norwegian (Norway)
+#   - nl-NL: Dutch (Netherlands)
+#   - pl-PL: Polish (Poland)
+#   - pt-BR: Portuguese (Brazil)
+#   - pt-PT: Portuguese (Portugal)
+#   - ro-RO: Romanian (Romania)
+#   - ru-RU: Russian (Russia)
+#   - sh: Serbo-Croatian
+#   - sk-SK: Slovak (Slovakia)
+#   - sl-SI: Slovenian (Slovenia)
+#   - sq: Albanian
+#   - sr: Serbian
+#   - sv-SE: Swedish (Sweden)
+#   - ta-IN: Tamil (India)
+#   - tg-TG: Tajik (Tajikistan)
+#   - tr-TR: Turkish (Turkey)
+#   - uk-UA: Ukrainian (Ukraine)
+#   - vi-VN: Vietnamese (Viet Nam)
+c.spellcheck.languages = ['en-GB']
 
 # Hide the statusbar unless a message is shown.
 # Type: Bool
