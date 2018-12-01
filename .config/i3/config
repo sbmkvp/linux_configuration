@@ -133,7 +133,7 @@ bar {
 	modifier Mod1
 	position bottom
 	strip_workspace_numbers yes
-	# mode hide
+	workspace_buttons no
 	colors {
 		background #222222
 		statusline #bbbbbb
