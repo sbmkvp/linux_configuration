@@ -114,7 +114,7 @@ fi
 
 alias garageinc="ssh -C bala@164.132.196.212"
 
-alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"'"
+alias awkc="gawk -vFPAT='[^,]*|\"[^\"]*\"'"
 
 alias web=qutebrowser
 
