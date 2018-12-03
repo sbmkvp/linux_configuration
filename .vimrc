@@ -33,7 +33,6 @@ set relativenumber
 set number
 set backspace=indent,eol,start
 set cursorline
-set cursorcolumn
 set ruler
 set background=dark
 set tabstop=4
