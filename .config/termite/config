@@ -14,10 +14,10 @@ search_wrap = true
 #geometry = 640x480
 
 # "system", "on" or "off"
-cursor_blink = system
+cursor_blink = off
 
 # "block", "underline" or "ibeam"
-cursor_shape = ibeam
+cursor_shape = block
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
 browser = qutebrowser
@@ -82,7 +82,7 @@ color15 = #fdf6e3
 #background = #3f3f3f
 #active_foreground = #e68080
 #active_background = #3f3f3f
-#padding = 5px
+padding = 0px
 #border = #3f3f3f
 #border_width = 0.5
 #roundness = 2.0

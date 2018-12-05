@@ -113,16 +113,22 @@ else
 fi
 
 alias garageinc="ssh -C bala@164.132.196.212"
-
-alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"'"
-
+alias awkc="awk -vFPAT='[^,]*|\"[^\"]*\"' -v OFS=','"
 alias web=qutebrowser
+alias r=rtichoke
 
-if [ -n "${STY+1}" ]; then
-	PROMPT="%{$terminfo[bold]$fg[red]%}$(echo $STY | awk -F'.' '{print $2}')-%13>>%m%>> >> %{$reset_color%}"
+
+if [ -n "${TMUX+1}" ]; then
+	PROMPT="%{$terminfo[bold]$fg[red]%}$(tmux display-message -p '#S')-%13>>%m%>> >> %{$reset_color%}"
+	TERM=screen-256color
 else
 	PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
 fi
 
+echo -e '\033[?112c'
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# export TERM=screen-256color
+
 clear
+
+
