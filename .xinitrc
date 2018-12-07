@@ -1,4 +1,4 @@
 #!/bin/sh
 hsetroot -tile Media/Wallpapers/Wallpaper.jpg &
-xrandr --output DVI-I-1 --primary --pos 0x0 --output DP-4 --right-of DVI-I-1 & DISPLAY=:0.1 2bwm &
+xrandr --output HDMI1 --primary --mode 1920x1080 --right-of DisplayPort-3 --output DisplayPort-3 --rotate left --output DVI-0 --right-of HDMI1 --mode 1280x1024 &
 exec i3

@@ -12,6 +12,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'sjl/badwolf'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'dhruvasagar/vim-table-mode'
 call vundle#end()
 
 " File type detection
@@ -93,7 +94,6 @@ function! s:goyo_enter()
 	map go :Goyo<CR>
 	set nocindent
 	set noautoindent
-	set nosmartindent
 	set spell
 	set textwidth=80
 	GitGutterDisable
@@ -103,7 +103,6 @@ function! s:goyo_leave()
 	set spell
 	set cindent
 	set autoindent
-	set nosmartindent
     set textwidth=0
 	GitGutterEnable
 endfunction

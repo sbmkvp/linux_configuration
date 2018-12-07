@@ -89,6 +89,14 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
+set $mon1 "DisplayPort-3"
+set $mon2 "HDMI1"
+set $mon3 "DVI-0"
+
+workspace $ws1 output $mon1
+workspace $ws2 output $mon2
+workspace $ws3 output $mon3
+
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -129,11 +137,11 @@ client.placeholder      #191919 #191919 #555555 #191919   #191919
 bindsym $mod+b bar mode toggle
 bar {
 	status_command i3blocks
-	output DP-4
-	modifier Mod1
-	position bottom
-	strip_workspace_numbers yes
-	workspace_buttons no
+	modifier Mod1+Mod4
+	position top
+	# strip_workspace_numbers yes
+    mode hide
+    hidden_state hide
 	colors {
 		background #222222
 		statusline #bbbbbb
@@ -142,7 +150,3 @@ bar {
 		urgent_workspace #666666 #666666 #bbbbbb
 	}
 }
-
-bindsym --release $mod+Ctrl+1 exec --no-startup-id goto1
-bindsym --release $mod+Ctrl+2 exec --no-startup-id goto2
-bindsym --release $mod+Ctrl+3 exec --no-startup-id goto3
