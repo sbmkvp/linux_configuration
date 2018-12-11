@@ -14,9 +14,6 @@ for_window [class="VirtualBox Machine"] fullscreen enable
 for_window [class="VirtualBox Machine"] move container to workspace $ws9
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Kodi"] floating enable
-for_window [class="Yad"] floating enable
-for_window [class="footfall-terminal"] floating enable
-for_window [class="QtQmlViewer"] floating enable
 default_border none
 focus_follows_mouse yes
 gaps inner 10
@@ -89,13 +86,22 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
-set $mon1 "DisplayPort-3"
-set $mon2 "HDMI1"
-set $mon3 "DVI-0"
+set $mon1 "DVI-0"
+set $mon2 "DisplayPort-3"
+set $mon3 "HDMI2"
 
 workspace $ws1 output $mon1
 workspace $ws2 output $mon2
 workspace $ws3 output $mon3
+workspace $ws4 output $mon1
+workspace $ws5 output $mon2
+workspace $ws6 output $mon3
+workspace $ws7 output $mon1
+workspace $ws8 output $mon2
+workspace $ws9 output $mon3
+
+assign [class="mpv"] $ws3
+for_window [class="mpv"] fullscreen enable
 
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -108,9 +114,9 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 
 bindsym --release $mod+x exec --no-startup-id scrot -s ~/Media/Screenshots/%Y-%m-%d-%H%M%S.png
-# bindsym $mod+Ctrl+l exec --no-startup-id "scrot ~/Media/blur.png && convert ~/Media/blur.png -blur 0x8 ~/Media/blur.png && i3lock -etu -p default -i ~/Media/blur.png -n && rm ~/Media/blur.png"
-bindsym $mod+Ctrl+l exec --no-startup-id "i3lock -etu -p default -c '#111111'"
-bindsym $mod+F9 exec --no-startup-id "scrot ~/Media/blur.png && convert ~/Media/blur.png -blur 0x8 ~/Media/blur.png && i3lock -etu -p default -i ~/Media/blur.png -n && rm ~/Media/blur.png"
+bindsym $mod+Ctrl+l exec --no-startup-id "scrot ~/Media/blur.png && OCL_ICD_VENDORS=mesa convert ~/Media/blur.png -blur 0x8 ~/Media/blur.png && i3lock -et -p default -i ~/Media/blur.png -n && rm ~/Media/blur.png"
+# bindsym $mod+Ctrl+l exec --no-startup-id "i3lock -etu -p default -c '#111111'"
+bindsym $mod+F9 exec --no-startup-id "scrot ~/Media/blur.png && OCL_ICD_VENDORS=mesa convert convert ~/Media/blur.png -blur 0x8 ~/Media/blur.png && i3lock -et -p default -i ~/Media/blur.png -n && rm ~/Media/blur.png"
 bindsym $mod+p exec playerctl play-pause
 bindsym $mod+bracketleft exec playerctl previous
 bindsym $mod+bracketright exec playerctl next

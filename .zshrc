@@ -94,9 +94,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 stty -ixon
 
-# if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-#   exec startx &> /dev/null
-# fi
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx &> /dev/null
+fi
 
 alias cdrcdesk="ssh -CYt ucfnbso@squarepeg.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
 alias cdrcdesk_a="ssh -CYt ucfnbso@archibald.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
@@ -130,5 +130,3 @@ source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # export TERM=screen-256color
 
 clear
-
-
