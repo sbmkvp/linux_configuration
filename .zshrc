@@ -130,5 +130,3 @@ source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # export TERM=screen-256color
 
 clear
-
-

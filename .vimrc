@@ -11,7 +11,10 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'sjl/badwolf'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'sedm0784/vim-you-autocorrect'
+Plugin 'eiginn/netrw'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'dhruvasagar/vim-table-mode'
 call vundle#end()
 
 " File type detection
@@ -78,7 +81,7 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 " Integrate vim with R via Tmux
-map <C-L> "kyy:echo system("tmux send-keys -t $(tmux display-message -p '#S:#I.bottom') ".escape(shellescape(@k),"$"))<CR>j
+map <C-L> "kyy:echo system("tmux send-keys -t $(tmux display-message -p '#S:#I.bottom-right') ".escape(shellescape(@k),"$"))<CR>j
 vmap <C-L> "xy:echo system("tmux send-keys -t $(tmux display-message -p '#S:#I.bottom') ".escape(shellescape(@x."\n"),"$"))<CR>j
 map <C-M><C-M> :echo system("tmux send-keys -t $(tmux display-message -p '#S:#I.bottom') ".shellescape("source('".expand('%:t')."')\n"))<CR><CR>
 
@@ -93,7 +96,6 @@ function! s:goyo_enter()
 	map go :Goyo<CR>
 	set nocindent
 	set noautoindent
-	set nosmartindent
 	set spell
 	set textwidth=80
 	GitGutterDisable
@@ -103,7 +105,6 @@ function! s:goyo_leave()
 	set spell
 	set cindent
 	set autoindent
-	set nosmartindent
     set textwidth=0
 	GitGutterEnable
 endfunction
