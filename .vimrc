@@ -15,6 +15,7 @@ Plugin 'sedm0784/vim-you-autocorrect'
 Plugin 'eiginn/netrw'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'tpope/vim-surround'
 call vundle#end()
 
 " File type detection
@@ -52,11 +53,14 @@ set scrolloff=10
 set noerrorbells visualbell t_vb=
 colorscheme badwolf
 set t_Co=256
-
-" Highlighting the last column in red and cursor column
+"
+" " Highlighting the last column in red and cursor column
 highlight OverLength ctermbg=darkred ctermfg=grey
 match OverLength /\%81v./
-highlight cursorcolumn ctermbg=darkgrey
+
+map hol :highlight OverLength ctermbg=darkred ctermfg=grey<CR>:match OverLength /\%81v./<CR>
+map hnl :highlight clear OverLength<CR>
+
 
 " Key remaps
 noremap <Up> <NOP>
