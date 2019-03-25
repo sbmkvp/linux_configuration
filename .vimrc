@@ -33,8 +33,8 @@ set incsearch
 set history=1000
 
 " Typing area looks
-set relativenumber
-set number
+" set relativenumber
+" set number
 set backspace=indent,eol,start
 set cursorline
 set ruler
