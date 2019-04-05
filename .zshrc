@@ -128,5 +128,8 @@ fi
 echo -e '\033[?112c'
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # export TERM=screen-256color
-
+alias mac_sst_start='ssh -D 8080 -f -q -C -N ucfnbso@squarepeg.geog.ucl.ac.uk'
+alias mac_proxy_on="sudo networksetup -setsocksfirewallproxy Wi-Fi localhost 8080"
+alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
+alias note="NAME=$(date +'%Y%m%d_%H%M'); touch $NAME.md && vim $NAME.md"
 clear

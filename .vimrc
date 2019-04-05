@@ -9,12 +9,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'sjl/badwolf'
+" Plugin 'sjl/badwolf'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'sedm0784/vim-you-autocorrect'
 Plugin 'eiginn/netrw'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'tpope/vim-surround'
 call vundle#end()
 
 " File type detection
@@ -50,7 +51,7 @@ set smartcase
 set sidescrolloff=10
 set scrolloff=10
 set noerrorbells visualbell t_vb=
-colorscheme badwolf
+" colorscheme badwolf
 set t_Co=256
 
 " Highlighting the last column in red and cursor column
