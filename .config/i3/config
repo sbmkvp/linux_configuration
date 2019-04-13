@@ -10,7 +10,7 @@ exec --no-startup-id "hsetroot -tile media/wallpapers/firewatch-red-1980x1080.jp
 exec --no-startup-id "sleep 1; setxkbmap -layout gb; setxkbmap -option caps:escape"
 
 floating_modifier $mod
-# for_window [class="Termite"] border pixel 10
+for_window [class="Termite"] border pixel 15
 for_window [class="VirtualBox Machine"] fullscreen enable
 for_window [class="VirtualBox Machine"] move container to workspace $ws9
 # for_window [class="R_x11"] move container to workspace $ws3
