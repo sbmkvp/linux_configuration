@@ -72,7 +72,7 @@ c.content.windowed_fullscreen = True
 #   - true
 #   - false
 #   - ask
-c.content.geolocation = True
+c.content.geolocation = False
 
 # Enable host blocking.
 # Type: Bool
@@ -422,15 +422,15 @@ c.colors.tabs.selected.even.bg = '#000000'
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = '8pt monospace'
+c.fonts.completion.entry = '12pt monospace'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = '8pt monospace'
+c.fonts.statusbar = '12pt monospace'
 
 # Font used in the tab bar.
 # Type: QtFont
-c.fonts.tabs = '8pt monospace'
+c.fonts.tabs = '12pt monospace'
 
 # Bindings for normal mode
 config.bind('xb', 'config-cycle statusbar.hide')

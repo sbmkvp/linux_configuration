@@ -89,7 +89,10 @@ function! s:goyo_enter()
   autocmd QuitPre <buffer> let b:quitting = 1
   cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
   set wrap
+<<<<<<< HEAD
   set spell
+=======
+>>>>>>> 90e4cbe280104f2547d48de1d50efafe18916d38
 endfunction
 function! s:goyo_leave()
   if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
@@ -100,7 +103,10 @@ function! s:goyo_leave()
     endif
   endif
   set nowrap
+<<<<<<< HEAD
   set nospell
+=======
+>>>>>>> 90e4cbe280104f2547d48de1d50efafe18916d38
 endfunction
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
