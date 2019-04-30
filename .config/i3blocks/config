@@ -59,8 +59,7 @@ command=echo "$(printf %d $(xbacklight))%"
 interval=1
 
 [volume]
-command=~/.config/i3blocks/scripts/volume/volume pulse
-label= 
+command=~/.config/i3blocks/scripts/volume-pulseaudio/volume-pulseaudio
 interval=1
 
 [iface]

@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Hack 9
+font = Monaco 12
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -71,7 +71,7 @@ color7  = #fdf6e3
 color15 = #fdf6e3
 
 # 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
+background = rgba(25, 25, 25, 0.85)
 
 # if unset, will reverse foreground and background
 # highlight = #2f2f2f

@@ -1,93 +1,76 @@
-" Setting the compatibilty
+" Switch compatibility and filetype off
 set nocompatible
 filetype off
 
-" Load vundle plugins
+" Load Plugings through vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'sjl/badwolf'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'sedm0784/vim-you-autocorrect'
-Plugin 'eiginn/netrw'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'tpope/vim-surround'
+Plugin 'VundleVim/Vundle.vim' " Plugin manager
+Plugin 'tomtom/tcomment_vim' " Commenting lines and selections
+Plugin 'eiginn/netrw' " File manager
+Plugin 'jalvesaq/Nvim-R' " R mode
+Plugin 'junegunn/goyo.vim' " Writing mode
+Plugin 'lervag/vimtex' " Latex mode
+Plugin 'sbmkvp/vim-colour-scheme' " Latex mode
+Plugin 'townk/vim-autoclose' " Close the paranthesis and tags
+Plugin 'tpope/vim-surround' " Surround stuff with things
+Plugin 'airblade/vim-gitgutter' " Show git changes for each line
+Plugin 'dhruvasagar/vim-table-mode' " Making tables in vim
 call vundle#end()
 
 " File type detection
-filetype plugin indent on
-syntax on
+filetype indent on
+filetype plugin on
+
+" Syntax highlighting
+syntax enable
+set showmatch " Show matching paranthesis
+set t_Co=256
+set background=light
+
+" Highlighting the last column in red and cursor column
+highlight OverLength ctermbg=darkred ctermfg=grey
+match OverLength /\%81v./
+map <tab>hh :highlight OverLength ctermbg=darkred ctermfg=grey<CR>:match OverLength /\%81v./<CR>
+map <tab>nh :highlight clear OverLength<CR>
+
+
+" Read when file changed from outside
+set autoread
 
 " Partial fuzzy file search
 set path+=**
 
 " Command line and menu looks
+set laststatus=1
+set history=10000
 set wildmenu
-set wildmode=full
-set laststatus=2
-set incsearch
-set history=1000
+set noshowmode
 
-" Typing area looks
-set relativenumber
-set number
+" Typing area
 set backspace=indent,eol,start
-set cursorline
-set ruler
-set background=dark
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
-set breakindent
-set smartindent
-set cindent
-set ignorecase
-set smartcase
-set sidescrolloff=10
-set scrolloff=10
-set noerrorbells visualbell t_vb=
-colorscheme badwolf
-set t_Co=256
-"
-" " Highlighting the last column in red and cursor column
-highlight OverLength ctermbg=darkred ctermfg=grey
-match OverLength /\%81v./
+set autoindent breakindent smartindent cindent
+set ignorecase smartcase
+set sidescrolloff=15 scrolloff=15
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
+set nowrap
+set whichwrap+=<,>,h,l
 
-map hol :highlight OverLength ctermbg=darkred ctermfg=grey<CR>:match OverLength /\%81v./<CR>
-map hnl :highlight clear OverLength<CR>
-
+" Delete trailing white space on save
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
 
 " Key remaps
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-imap <Up> <NOP>
-imap <Down> <NOP>
-imap <Left> <NOP>
-imap <Right> <NOP>
-imap jk <Esc>
+" imap jk <Esc>
+nmap <C-j> gj
+nmap <C-k> gk
 nnoremap ; :
-map <C-J> gj
-map <C-K> gk
-
-" Customisations on netrw
-let g:netrw_banner=0
-let g:netrw_browse_split=4
-let g:netrw_altv=1
-let g:netrw_liststyle=3
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
-
-" Integrate vim with R via Tmux
-map <C-L> "kyy:echo system("tmux send-keys -t $(tmux display-message -p '#S:#I.bottom-right') ".escape(shellescape(@k),"$"))<CR>j
-vmap <C-L> "xy:echo system("tmux send-keys -t $(tmux display-message -p '#S:#I.bottom') ".escape(shellescape(@x."\n"),"$"))<CR>j
-map <C-M><C-M> :echo system("tmux send-keys -t $(tmux display-message -p '#S:#I.bottom') ".shellescape("source('".expand('%:t')."')\n"))<CR><CR>
+set mouse=a
 
 " Working with buffers
 map <tab><tab> <C-^>
@@ -95,26 +78,39 @@ map <tab>n :bNext<CR>
 map <tab>p :bprevious<CR>
 map <tab>l :buffers<CR>:b
 
-" Goyo writing mode settings
-function! s:goyo_enter()
-	map go :Goyo<CR>
-	set nocindent
-	set noautoindent
-	set spell
-	set textwidth=80
-	GitGutterDisable
-endfunction
-function! s:goyo_leave()
-	map go :Goyo 85<CR>
-	set spell
-	set cindent
-	set autoindent
-    set textwidth=0
-	GitGutterEnable
-endfunction
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
-map go :Goyo 85<CR>
 
 " Git gutter settings
-map gl :GitGutterToggle<CR>
+map git :GitGutterToggle<CR>
+
+" Writing mode customisations
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+  set wrap
+  set spell
+endfunction
+function! s:goyo_leave()
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+  set nowrap
+  set nospell
+endfunction
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
+nmap go :Goyo<CR>
+
+" Error settings
+set noerrorbells " turn off error sounds
+set novisualbell " turn off error flash
+set t_vb= " turn off error flash
+
+
+colorscheme contrast
