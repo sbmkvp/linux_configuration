@@ -60,6 +60,9 @@ ZSH_THEME=""
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	vi-mode
+  zsh-autosuggestions
+  zsh-history-substring-search
+  fzf
 )
 
 source $ZSH/oh-my-zsh.sh

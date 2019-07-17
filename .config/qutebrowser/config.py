@@ -55,11 +55,11 @@ c.qt.args = ['ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapte
 # as it can cause issues with some bitmap fonts. As an alternative to
 # this, it's possible to set font sizes and the `zoom.default` setting.
 # Type: Bool
-c.qt.highdpi = True
+c.qt.highdpi = False
 
 # Always restore open sites when qutebrowser is reopened.
 # Type: Bool
-c.auto_save.session = False
+c.auto_save.session = True
 
 # Limit fullscreen to the browser window (does not expand to fill the
 # screen).
@@ -296,7 +296,7 @@ c.zoom.default = '100%'
 
 # Available zoom levels.
 # Type: List of Perc
-c.zoom.levels = ['25%', '33%', '50%', '67%', '75%', '80', '85', '90%', '100%', '110%', '125%', '150%', '175%', '200%', '250%', '300%', '400%', '500%']
+c.zoom.levels = ['25%', '33%', '40', '50%', '60', '67%', '75%', '80', '85', '90%', '100%', '110%', '125%', '150%', '175%', '200%', '250%', '300%', '400%', '500%']
 
 # Background color of the completion widget for odd rows.
 # Type: QssColor
@@ -422,15 +422,15 @@ c.colors.tabs.selected.even.bg = '#000000'
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = '12pt monospace'
+c.fonts.completion.entry = '8pt monospace'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = '12pt monospace'
+c.fonts.statusbar = '8pt monospace'
 
 # Font used in the tab bar.
 # Type: QtFont
-c.fonts.tabs = '12pt monospace'
+c.fonts.tabs = '8pt monospace'
 
 # Bindings for normal mode
 config.bind('xb', 'config-cycle statusbar.hide')
