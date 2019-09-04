@@ -7,7 +7,7 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME=""
+ZSH_THEME="agnoster"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -121,12 +121,12 @@ alias web=qutebrowser
 alias r=radian
 
 
-if [ -n "${TMUX+1}" ]; then
-	PROMPT="%{$terminfo[bold]$fg[red]%}$(tmux display-message -p '#S')-%13>>%m%>> >> %{$reset_color%}"
-	TERM=screen-256color
-else
-	PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
-fi
+# if [ -n "${TMUX+1}" ]; then
+# 	PROMPT="%{$terminfo[bold]$fg[red]%}$(tmux display-message -p '#S')-%13>>%m%>> >> %{$reset_color%}"
+# 	TERM=screen-256color
+# else
+# 	PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
+# fi
 
 echo -e '\033[?112c'
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
