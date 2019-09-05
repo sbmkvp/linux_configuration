@@ -16,9 +16,11 @@ Plugin 'sbmkvp/vim-colour-scheme' " Latex mode
 Plugin 'townk/vim-autoclose' " Close the paranthesis and tags
 Plugin 'tpope/vim-surround' " Surround stuff with things
 Plugin 'airblade/vim-gitgutter' " Show git changes for each line
+Plugin 'tpope/vim-fugitive' " Show git changes for each line
 Plugin 'dhruvasagar/vim-table-mode' " Making tables in vim
 Plugin 'junegunn/fzf' " Making tables in vim
 Plugin 'junegunn/fzf.vim' " Making tables in vim
+Plugin 'vim-airline/vim-airline' " Making tables in vim
 call vundle#end()
 
 " File type detection
@@ -138,3 +140,5 @@ let R_assign = 0
 map <C-p> :Files<CR>
 map fi :Rg<CR>
 map Fi :Ag<CR>
+
+let g:airline#extensions#tabline#enabled = 1
