@@ -138,5 +138,8 @@ alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
 alias note="NAME=$(date +'%Y%m%d_%H%M'); touch $NAME.md && vim $NAME.md"
 
 export SPACESHIP_TIME_SHOW=true
+export SPACESHIP_BATTERY_SHOW=always
+export SPACESHIP_PROMPT_ADD_NEWLINE=false
+export SPACESHIP_CHAR_SYMBOL=">> "
 
 clear
