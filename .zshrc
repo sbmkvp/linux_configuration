@@ -60,6 +60,11 @@ ZSH_THEME="spaceship"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	vi-mode
+  git
+  fzf
+  zsh-autosuggestions
+  zsh-history-substring-search
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,12 +131,12 @@ alias r=radian
 # fi
 
 echo -e '\033[?112c'
-source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # export TERM=screen-256color
 alias mac_sst_start='ssh -D 8080 -f -q -C -N bala@geoinformatics.uk'
 alias mac_proxy_on="sudo networksetup -setsocksfirewallproxy Wi-Fi localhost 8080"
 alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
 alias note="NAME=$(date +'%Y%m%d_%H%M'); touch $NAME.md && vim $NAME.md"
 
+export SPACESHIP_TIME_SHOW=true
+
 clear
-source $HOME/.cargo/env
