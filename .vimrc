@@ -10,17 +10,18 @@ Plugin 'tomtom/tcomment_vim' " Commenting lines and selections
 Plugin 'eiginn/netrw' " File manager
 Plugin 'jalvesaq/Nvim-R' " R mode
 Plugin 'junegunn/goyo.vim' " Writing mode
-Plugin 'junegunn/limelight.vim' " Writing mode
+Plugin 'junegunn/limelight.vim' " highlight current paragraph
 Plugin 'lervag/vimtex' " Latex mode
-Plugin 'sbmkvp/vim-colour-scheme' " Latex mode
+Plugin 'sbmkvp/vim-colour-scheme' " My Own Colorscheme
 Plugin 'townk/vim-autoclose' " Close the paranthesis and tags
 Plugin 'tpope/vim-surround' " Surround stuff with things
 Plugin 'airblade/vim-gitgutter' " Show git changes for each line
 Plugin 'tpope/vim-fugitive' " Show git changes for each line
 Plugin 'dhruvasagar/vim-table-mode' " Making tables in vim
-Plugin 'junegunn/fzf' " Making tables in vim
-Plugin 'junegunn/fzf.vim' " Making tables in vim
-Plugin 'vim-airline/vim-airline' " Making tables in vim
+Plugin 'junegunn/fzf' " Fuzzy search files
+Plugin 'junegunn/fzf.vim' " Fuzzy search files
+Plugin 'vim-airline/vim-airline' " Status line
+Plugin 'vim-airline/vim-airline-themes' " Status line themes
 call vundle#end()
 
 " File type detection
@@ -142,3 +143,14 @@ map fi :Rg<CR>
 map Fi :Ag<CR>
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.maxlinenr = ''
