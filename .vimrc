@@ -17,6 +17,8 @@ Plugin 'townk/vim-autoclose' " Close the paranthesis and tags
 Plugin 'tpope/vim-surround' " Surround stuff with things
 Plugin 'airblade/vim-gitgutter' " Show git changes for each line
 Plugin 'dhruvasagar/vim-table-mode' " Making tables in vim
+Plugin 'junegunn/fzf' " Making tables in vim
+Plugin 'junegunn/fzf.vim' " Making tables in vim
 call vundle#end()
 
 " File type detection
@@ -132,3 +134,7 @@ set t_vb= " turn off error flash
 let R_assign = 0
 " let g:limelight_bop = '^'
 " let g:limelight_eop = '$'
+
+map <C-p> :Files<CR>
+map fi :Rg<CR>
+map Fi :Ag<CR>
