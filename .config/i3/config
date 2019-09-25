@@ -89,7 +89,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
 set $mon1 "DVI-0"
-set $mon2 "DisplayPort-3"
+set $mon2 "DisplayPort-2"
 set $mon3 "HDMI2"
 
 workspace $ws1 output $mon1
