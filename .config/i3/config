@@ -1,16 +1,15 @@
 #! /bin/bash
 set $mod Mod4
-font pango:monospace 8
+font pango:monospace 9
 exec --no-startup-id "setxkbmap -layout gb"
 exec --no-startup-id "setxkbmap -option caps:escape"
 exec --no-startup-id "xmodmap -e 'keycode 108 = Super_R'"
 exec --no-startup-id "xset -r 108"
 exec --no-startup-id "dunst"
-exec --no-startup-id "hsetroot -tile media/wallpapers/firewatch-red-1980x1080.jpg"
 exec --no-startup-id "sleep 1; setxkbmap -layout gb; setxkbmap -option caps:escape"
 
 floating_modifier $mod
-for_window [class="Termite"] border pixel 5
+# for_window [class="Termite"] border pixel 15
 for_window [class="VirtualBox Machine"] fullscreen enable
 for_window [class="VirtualBox Machine"] move container to workspace $ws9
 # for_window [class="R_x11"] move container to workspace $ws3
@@ -116,13 +115,8 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 
 bindsym --release $mod+x exec --no-startup-id scrot -s ~/media/screenshots/%Y-%m-%d-%H%M%S.png
-<<<<<<< HEAD
 bindsym $mod+Ctrl+l exec --no-startup-id "betterlockscreen --lock blur"
 bindsym $mod+F9 exec --no-startup-id "betterlockscreen --lock blur"
-=======
-bindsym $mod+Ctrl+l exec --no-startup-id "scrot ~/media/blur.png && OCL_ICD_VENDORS=mesa convert ~/media/blur.png -blur 0x8 ~/media/blur.png && i3lock -o '#191d0f' -w '#572020' -l '#ffffff' -i ~/media/blur.png -n && rm ~/media/blur.png"
-bindsym $mod+F9 exec --no-startup-id "scrot ~/media/blur.png && OCL_ICD_VENDORS=mesa convert ~/media/blur.png -blur 0x8 ~/media/blur.png && i3lock -o '#191d0f' -w '#572020' -l '#ffffff' -i ~/media/blur.png -n && rm ~/media/blur.png"
->>>>>>> 90e4cbe280104f2547d48de1d50efafe18916d38
 bindsym $mod+p exec playerctl play-pause
 bindsym $mod+bracketleft exec playerctl previous
 bindsym $mod+bracketright exec playerctl next
@@ -152,13 +146,8 @@ bar {
 	modifier Mod1+Mod4
 	position top
 	strip_workspace_numbers yes
-<<<<<<< HEAD
   mode hide
   hidden_state hide
-=======
-    # mode hide
-    hidden_state hide
->>>>>>> 90e4cbe280104f2547d48de1d50efafe18916d38
 	colors {
 		background #222222
 		statusline #bbbbbb
@@ -167,5 +156,3 @@ bar {
 		urgent_workspace #666666 #666666 #bbbbbb
 	}
 }
-
-exec --no-startup-id "termite"
