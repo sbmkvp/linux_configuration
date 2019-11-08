@@ -1,37 +1,144 @@
-set my_pass = `gpg -dq $HOME/.mutt/pwd.gpg`
-set ssl_starttls=yes
-set ssl_force_tls=yes
-set imap_user = 'sbm.kvp@gmail.com'
-set imap_pass = $my_pass
-set from = 'sbm.kvp@gmail.com'
-set realname='Balamurugan'
-set folder = imaps://imap.gmail.com/
-set spoolfile = imaps://imap.gmail.com/INBOX
-set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
-set header_cache = "~/.mutt/cache/headers"
-set message_cachedir = "~/.mutt/cache/bodies"
-set certificate_file = "~/.mutt/certificates"
-set smtp_authenticators = 'login'
-set smtp_url = 'smtps://sbm.kvp@smtp.gmail.com:465/'
-set smtp_pass = $my_pass
-set move = no
-set imap_keepalive = 900
-set editor = vim
-bind pager j next-line
-bind pager k previous-line
-unset imap_passive        
-set imap_check_subscribed
-set mail_check=60
-set timeout=10
-set copy=no
-set quit=ask-yes
-bind index,pager \ch sidebar-prev
-bind index,pager \cl sidebar-next
-bind index,pager \co sidebar-open
+# Basic configuration
+
+source "~/.mutt/user"
+
+### Advanced configuration
+### YOU SHOULD NOT MODIFY THIS UNLESS YOU KNOW WHAT YOU'RE DOING
+
+# Loading language properties
+
+source "~/.mutt/lang/$my_lang"
+
+## Server config
+
+# IMAP config
+set imap_user="$my_username@$my_domain"
+set imap_pass=$my_password
+
+set folder="imaps://outlook.office365.com/"
+set spoolfile= +INBOX
+set postponed= +$my_drafts_noquote
+set record = +$my_sent_noquote
+set trash = +$my_trash_noquote
+mailboxes
 set mailcap_path="~/.mutt/mailcap"
+
+# set imap_check_subscribed="yes"
+# set imap_list_subscribed="yes"
+set timeout=10
+set mail_check=60
+set imap_keepalive=900
+set imap_idle
+unset mark_old
+set ssl_use_sslv3=yes
+
+# SMTP config
+set realname = $my_realname
+set from = "$my_username@$my_domain"
+set smtp_pass = $my_password
+set hostname = $my_domain
+set smtp_url = "smtp://$my_username@$my_domain@outlook.office365.com:587/"
+set ssl_force_tls = yes
+set smtp_authenticators = "login"
+
+## More settings
+
+# File storage settings
+
+set signature="~/.mutt/signature"
+set message_cachedir="~/.mutt/message_cache"
+set header_cache="~/.mutt/header_cache"
+set tmpdir="~/.mutt/tmp"
+
+# Text view first
+set pager_stop="yes"
+set smart_wrap="yes"
+alternative_order text/plain
 auto_view text/html
-alternative_order text/plain text/enriched text/html
-set sort=reverse-date-sent
+set reverse_name=yes
+set reverse_realname=yes
+
+# Text editor
+#set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'
+set editor="vim +':set textwidth=0' +':set wrapmargin=0' +':set wrap' +':Goyo'"
+# set editor="vim"
+
+# Adress book handling
+set sort_alias=alias
+set reverse_alias=yes
+set alias_file="~/.mutt/aliases"
+source "~/.mutt/gal"
+source "~/.mutt/aliases"
+source "~/.mutt/mailing_lists"
+
+# Thread ordering
+set sort = 'reverse-date-received'
+set sort_browser="reverse-date"
+set sort_aux="last-date-received"
+unset collapse_unread
+# set index_format=" %?M?   ↳&%4C?   %Z      %D     %-15.15n    %s"
+set index_format="%?M?  ↳&%4C? | %Z | %D | %-15.15n | %s"
+set date_format="!%d/%m/%Y %H:%M"
+set help=no
+set status_on_top=yes
+
+## Key bindings
+
+# Mailboxes
+bind    index   G  imap-fetch-mail
+macro   index   gi "<change-folder>=INBOX<enter>"       "Go to Inbox"
+macro   index   gs "<change-folder>=$my_sent<enter>"    "Go to Sent"
+macro   index   gd "<change-folder>=$my_drafts<enter>"  "Go to Drafts"
+macro   index   gt "<change-folder>=$my_trash<enter>"   "Go to Trash"
+
+# Index
+bind    index   <up>        previous-entry
+bind    index   <down>      next-entry
+bind    index   <delete>    delete-message
+bind    index   n           next-entry
+bind    index   p           previous-entry
+macro   index   Q           ":set quit=yes\nq" "Quit mutt without asking"
+bind    index   C           noop
+bind    index   -           collapse-thread
+bind    index   _           collapse-all
+
+# Pager
+bind    pager   <up>        previous-line
+bind    pager   <down>      next-line
+bind    pager   <left>      previous-entry
+bind    pager   <right>     next-entry
+bind    pager   <delete>    delete-message
+bind    pager   k           previous-line
+bind    pager   j           next-line
+bind    pager   n           next-entry
+bind    pager   p           previous-entry
+bind    pager   w           previous-page
+
+# # Colors
+# color   normal      white default
+# color   attachment  brightyellow default
+# color   hdrdefault  cyan default
+# color   indicator   black cyan
+# color   markers     brightred default
+# color   quoted      green default
+# color   signature   cyan default
+# color   status      brightgreen blue
+# color   tilde       blue default
+# color   tree        red default
+# color   header      brightgreen default ^From:
+# color   header      brightcyan default ^To:
+# color   header      brightcyan default ^Reply-To:
+# color   header      brightcyan default ^Cc:
+# color   header      brightblue default ^Subject:
+# color   body        brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+# color   body        brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+
+# For better looks
+set markers=no # don't put '+' at the beginning of wrapped lines
+# set pager_index_lines= 5 # how large is the index window?
+
+set quit="ask-no"
+
 
 color normal        brightyellow    default
 color error         red             default

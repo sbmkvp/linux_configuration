@@ -26,37 +26,37 @@ command=~/.config/i3blocks/scripts/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=20
 markup=pango
 
-[gmail]
-command=~/.config/i3blocks/scripts/gmail
-interval=60
-separator=true
-
-[gcal]
-command=~/.config/i3blocks/scripts/gcal
-interval=60
-separator=true
-
-[disk]
-label= 
-interval=5
-
-[memory]
-label= 
-interval=1
-
-[cpu_usage]
-label= 
-interval=1
-
-[temperature]
-command=echo "$(printf %d $(~/.config/i3blocks/scripts/$BLOCK_NAME/$BLOCK_NAME))°C"
-label= 
-interval=5
-
-[brightness]
-label=
-command=echo "$(printf %d $(xbacklight))%"
-interval=1
+# [gmail]
+# command=~/.config/i3blocks/scripts/gmail
+# interval=60
+# separator=true
+#
+# [gcal]
+# command=~/.config/i3blocks/scripts/gcal
+# interval=60
+# separator=true
+#
+# [disk]
+# label= 
+# interval=5
+#
+# [memory]
+# label= 
+# interval=1
+#
+# [cpu_usage]
+# label= 
+# interval=1
+#
+# [temperature]
+# command=echo "$(printf %d $(~/.config/i3blocks/scripts/$BLOCK_NAME/$BLOCK_NAME))°C"
+# label= 
+# interval=5
+#
+# [brightness]
+# label=
+# command=echo "$(printf %d $(xbacklight))%"
+# interval=1
 
 [volume]
 command=~/.config/i3blocks/scripts/volume/volume pulse
