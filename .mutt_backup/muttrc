@@ -1,0 +1,115 @@
+set my_pass = `gpg -dq $HOME/.mutt_backup/pwd.gpg`
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set imap_user = 'sbm.kvp@gmail.com'
+set imap_pass = $my_pass
+set from = 'sbm.kvp@gmail.com'
+set realname='Balamurugan'
+set folder = imaps://imap.gmail.com/
+set spoolfile = imaps://imap.gmail.com/INBOX
+set postponed="imaps://imap.gmail.com/[Google Mail]/Drafts"
+set header_cache = "~/.mutt_backup/cache/headers"
+set message_cachedir = "~/.mutt_backup/cache/bodies"
+set certificate_file = "~/.mutt_backup/certificates"
+set smtp_authenticators = 'login'
+set smtp_url = 'smtps://sbm.kvp@smtp.gmail.com:465/'
+set smtp_pass = $my_pass
+set move = no
+set imap_keepalive = 900
+set editor="vim +':set textwidth=0' +':set wrapmargin=0' +':set wrap' +':Goyo'"
+bind pager j next-line
+bind pager k previous-line
+unset imap_passive        
+set imap_check_subscribed
+set mail_check=60
+set timeout=10
+set copy=no
+set quit=ask-no
+bind index,pager \ch sidebar-prev
+bind index,pager \cl sidebar-next
+bind index,pager \co sidebar-open
+set mailcap_path="~/.mutt_backup/mailcap"
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+set signature="~/.mutt/signature"
+
+set sort=reverse-date-sent
+set markers=no # don't put '+' at the beginning of wrapped lines
+set help=no
+set status_on_top=yes
+set index_format="%?M?  ↳&%4C? | %Z | %D | %-15.15n | %s"
+set date_format="!%d/%m/%Y"
+
+macro   index   gi "<change-folder>=INBOX<enter>"       "Go to Inbox"
+
+color normal        brightyellow    default
+color error         red             default
+color tilde         black           default
+color message       cyan            default
+color markers       red             white
+color attachment    white           default
+color search        brightmagenta   default
+color status        brightyellow    black
+color indicator     brightblack     yellow
+color tree          yellow          default                                     
+mono  bold          bold
+mono  underline     underline
+mono  indicator     reverse
+mono  error         bold
+color index         red             default         "~A"  
+color index         brightred       default         "~E"   
+color index         blue            default         "~N"    
+color index         blue            default         "~O"     
+color index         brightmagenta   default         "~Q"      
+color index         brightgreen     default         "~R"       
+color index         blue            default         "~U"        
+color index         blue            default         "~U~$"       
+color index         brightyellow    default         "~v"          
+color index         brightyellow    default         "~P"           
+color index         cyan            default         "~p!~F"         
+color index         cyan            default         "~N~p!~F"        
+color index         cyan            default         "~U~p!~F"         
+color index         brightgreen     default         "~R~p!~F"          
+color index         red             default         "~F"                
+color index         red             default         "~F~p"               
+color index         red             default         "~N~F"                
+color index         red             default         "~N~F~p"               
+color index         red             default         "~U~F~p"                
+color index         black           red             "~D"                     
+color index         brightcyan      default         "~v~(!~N)"                
+color index         yellow          default         "~v~(~N)"                  
+color index         green           default         "~N~v~(~N)"                 
+color index         red             black           "~v~(~F)!~N"             
+color index         yellow          black           "~v~(~F~N)"               
+color index         green           black           "~N~v~(~F~N)"              
+color index         green           black           "~N~v~(~F)"                 
+color index         cyan            black           "~v~(~p)"                   
+color index         yellow          red             "~v~(~D)"                   
+color hdrdefault    brightgreen     default
+color header        brightyellow    default         "^(From)"
+color header        blue            default         "^(Subject)"
+color quoted        blue            default
+color quoted1       cyan            default
+color quoted2       yellow          default
+color quoted3       red             default
+color quoted4       brightred       default
+color signature     brightgreen     default
+color bold          black           default
+color underline     black           default
+color normal        default         default
+color body          brightcyan      default         "[;:][-o][)/(|]"
+color body          brightcyan      default         "[;:][)(|]"         
+color body          brightcyan      default         "[*]?((N)?ACK|CU|LOL|SCNR|BRB|BTW|CWYL|\
+                                                     |FWIW|vbg|GD&R|HTH|HTHBE|IMHO|IMNSHO|\
+                                                     |IRL|RTFM|ROTFL|ROFL|YMMV)[*]?"
+color body          brightcyan      default         "[ ][*][^*]*[*][ ]?" 
+color body          brightcyan      default         "[ ]?[*][^*]*[*][ ]" 
+color body          red             default         "(BAD signature)"
+color body          cyan            default         "(Good signature)"
+color body          brightblack     default         "^gpg: Good signature .*"
+color body          brightyellow    default         "^gpg: "
+color body          brightyellow    red             "^gpg: BAD signature from.*"
+mono  body          bold                            "^gpg: Good signature"
+mono  body          bold                            "^gpg: BAD signature from.*"
+color body          red             default         "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
+

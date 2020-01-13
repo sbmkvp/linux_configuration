@@ -1,6 +1,0 @@
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
-application/pdf; mupdf %s;
-application/vnd.openxmlformats-officedocument.wordprocessingml.document; pandoc -t Plain %s; copiousoutput;
-application/msword; catdoc -t %s; copiousoutput;
-video/mp4; mplayer %s;
-
