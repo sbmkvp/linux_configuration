@@ -20,7 +20,7 @@
 c.new_instance_open_target = 'window'
 
 # Which window to choose when opening links as new tabs. When
-# `new_instance_open_target` is not set to `window`, this is ignored.
+# `new_instance_open_target` is set to `window`, this is ignored.
 # Type: String
 # Valid values:
 #   - first-opened: Open new tabs in the first (oldest) opened window.
@@ -202,7 +202,7 @@ c.spellcheck.languages = ['en-GB']
 
 # Hide the statusbar unless a message is shown.
 # Type: Bool
-c.statusbar.hide = False
+c.statusbar.hide = True
 
 # Position of the status bar.
 # Type: VerticalPosition
@@ -242,7 +242,7 @@ c.tabs.favicons.show = 'never'
 #   - bottom
 #   - left
 #   - right
-c.tabs.position = 'top'
+c.tabs.position = 'bottom'
 
 # When to show the tab bar.
 # Type: String
@@ -314,7 +314,7 @@ c.colors.completion.item.selected.fg = '#000000'
 # Type: QssColor
 c.colors.completion.item.selected.bg = '#000000'
 
-# Top border color of the completion widget category headers.
+# Top border color of the selected completion item.
 # Type: QssColor
 c.colors.completion.item.selected.border.top = '#000000'
 
@@ -385,7 +385,7 @@ c.colors.statusbar.url.success.http.fg = '#ffffff'
 c.colors.statusbar.url.success.https.fg = '#ffffff'
 
 # Background color of the tab bar.
-# Type: QtColor
+# Type: QssColor
 c.colors.tabs.bar.bg = '#000000'
 
 # Foreground color of unselected odd tabs.

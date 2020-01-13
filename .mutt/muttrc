@@ -18,7 +18,7 @@ set imap_pass=$my_password
 set folder="imaps://outlook.office365.com/"
 set spoolfile= +INBOX
 set postponed= +$my_drafts_noquote
-set record = +$my_sent_noquote
+# set record = +$my_sent_noquote
 set trash = +$my_trash_noquote
 mailboxes
 set mailcap_path="~/.mutt/mailcap"
@@ -62,6 +62,7 @@ set reverse_realname=yes
 #set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'
 set editor="vim +':set textwidth=0' +':set wrapmargin=0' +':set wrap' +':Goyo'"
 # set editor="vim"
+set norecord
 
 # Adress book handling
 set sort_alias=alias
@@ -78,7 +79,7 @@ set sort_aux="last-date-received"
 unset collapse_unread
 # set index_format=" %?M?   ↳&%4C?   %Z      %D     %-15.15n    %s"
 set index_format="%?M?  ↳&%4C? | %Z | %D | %-15.15n | %s"
-set date_format="!%d/%m/%Y %H:%M"
+set date_format="!%d/%m/%Y"
 set help=no
 set status_on_top=yes
 

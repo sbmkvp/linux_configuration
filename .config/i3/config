@@ -1,16 +1,18 @@
 #! /bin/bash
 set $mod Mod4
 font pango:monospace 8
-exec --no-startup-id "setxkbmap -layout gb"
-exec --no-startup-id "setxkbmap -option caps:escape"
+# exec --no-startup-id "setxkbmap -layout gb"
+# exec --no-startup-id "setxkbmap -option caps:escape"
 exec --no-startup-id "xmodmap -e 'keycode 108 = Super_R'"
 exec --no-startup-id "xset -r 108"
 exec --no-startup-id "dunst"
-exec --no-startup-id "hsetroot -tile media/wallpapers/firewatch-red-1980x1080.jpg"
+# exec --no-startup-id "hsetroot -tile media/wallpapers/milkyway.jpg"
+exec --no-startup-id "hsetroot -root -tile media/wallpapers/firewatch-red-1980x1080.jpg"
+exec --no-startup-id "hsetroot"
 exec --no-startup-id "sleep 1; setxkbmap -layout gb; setxkbmap -option caps:escape"
 
 floating_modifier $mod
-for_window [class="Termite"] border pixel 15
+# for_window [class="Termite"] border pixel 15
 for_window [class="MPlayer"] fullscreen enable
 # for_window [class="VirtualBox Machine"] fullscreen enable
 # for_window [class="VirtualBox Machine"] move container to workspace $ws9
@@ -19,7 +21,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="obs"] floating enable
 for_window [class="Kodi"] floating enable
 default_border none
-focus_follows_mouse No
+focus_follows_mouse Yes
 gaps inner 10
 gaps outer 0
 
@@ -27,7 +29,8 @@ bindsym $mod+Return exec --no-startup-id "termite"
 bindsym $mod+Shift+Return exec --no-startup-id "qutebrowser"
 bindsym $mod+o exec --no-startup-id "rofi -show run -display-run '>>> ' -width 400 -theme ~/.config/rofi/bala.rasi"
 bindsym $mod+space exec --no-startup-id "rofi -show run -display-run '>>> ' -width 400 -theme ~/.config/rofi/bala.rasi"
-bindsym $mod+Shift+o exec --no-startup-id "rofi -width 400 -show window -display-window '$$$ ' -theme ~/.config/rofi/bala.rasi"
+# bindsym $mod+Shift+o exec --no-startup-id "rofi -width 400 -show window -display-window '$$$ ' -theme ~/.config/rofi/bala.rasi"
+bindsym $mod+Shift+o exec "xdotool selectwindow set_window --name 'KeepOpaque'"
 bindsym $mod+Shift+space exec --no-startup-id "rofi -width 400 -show window -display-window '$$$ ' -theme ~/.config/rofi/bala.rasi"
 bindsym $mod+F3 exec --no-startup-id "pactl set-sink-volume 0 +5%"
 bindsym $mod+F2 exec --no-startup-id "pactl set-sink-volume 0 -5%"
@@ -91,7 +94,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
 set $mon1 "DVI-0"
-set $mon2 "DisplayPort-2"
+set $mon2 "DisplayPort-3"
 set $mon3 "HDMI2"
 
 workspace $ws1 output $mon1
@@ -142,6 +145,14 @@ client.focused_inactive #191919 #191919 #555555 #191919   #191919
 client.unfocused        #191919 #191919 #555555 #191919   #191919
 client.urgent           #191919 #191919 #555555 #191919   #191919
 client.placeholder      #191919 #191919 #555555 #191919   #191919
+
+# # class                 border  backgr. text    indicator child_border
+# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+# client.urgent           #2f343a #900000 #ffffff #900000   #900000
+# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+#
 
 bindsym $mod+b bar mode toggle
 bar {

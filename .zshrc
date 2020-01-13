@@ -136,9 +136,9 @@ alias mac_sst_start='ssh -D 8080 -f -q -C -N bala@geoinformatics.uk'
 alias mac_proxy_on="sudo networksetup -setsocksfirewallproxy Wi-Fi localhost 8080"
 alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
 alias note="NAME=$(date +'%Y%m%d_%H%M'); touch $NAME.md && vim $NAME.md"
-
 export SPACESHIP_TIME_SHOW=true
 export SPACESHIP_BATTERY_SHOW=always
 export SPACESHIP_CHAR_SYMBOL=">> "
+export IN_API_KEY="57e72969fb7147068e4ac7a8f471695a"
 
 clear
