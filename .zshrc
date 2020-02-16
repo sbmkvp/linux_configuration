@@ -142,3 +142,5 @@ export SPACESHIP_CHAR_SYMBOL=">> "
 export IN_API_KEY="57e72969fb7147068e4ac7a8f471695a"
 
 clear
+
+source /home/ucfnbso/.config/broot/launcher/bash/br
