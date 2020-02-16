@@ -11,6 +11,7 @@ Plugin 'eiginn/netrw' " File manager
 Plugin 'jalvesaq/Nvim-R' " R mode
 Plugin 'junegunn/goyo.vim' " Writing mode
 Plugin 'junegunn/limelight.vim' " highlight current paragraph
+Plugin 'junegunn/vim-easy-align' " Align things on delimiter
 Plugin 'lervag/vimtex' " Latex mode
 Plugin 'sbmkvp/vim-colour-scheme' " My Own Colorscheme
 Plugin 'townk/vim-autoclose' " Close the paranthesis and tags
