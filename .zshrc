@@ -142,3 +142,5 @@ export SPACESHIP_BATTERY_SHOW=always
 export SPACESHIP_CHAR_SYMBOL=">> "
 
 clear
+
+source /Users/bala/Library/Preferences/org.dystroy.broot/launcher/bash/br
