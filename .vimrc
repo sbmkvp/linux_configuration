@@ -79,6 +79,8 @@ endfun
 " imap jk <Esc>
 map <C-j> gj
 map <C-k> gk
+map <C-n> :set wrap<CR>
+map <C-m> :set nowrap<CR>
 nnoremap ; :
 set mouse=a
 

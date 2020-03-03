@@ -55,7 +55,7 @@ c.qt.args = ['ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapte
 # as it can cause issues with some bitmap fonts. As an alternative to
 # this, it's possible to set font sizes and the `zoom.default` setting.
 # Type: Bool
-c.qt.highdpi = False
+c.qt.highdpi = True
 
 # Always restore open sites when qutebrowser is reopened.
 # Type: Bool
@@ -251,7 +251,7 @@ c.tabs.position = 'bottom'
 #   - never: Always hide the tab bar.
 #   - multiple: Hide the tab bar if only one tab is open.
 #   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'always'
+c.tabs.show = 'never'
 
 # Duration (in milliseconds) to show the tab bar before hiding it when
 # tabs.show is set to 'switching'.
@@ -422,15 +422,15 @@ c.colors.tabs.selected.even.bg = '#000000'
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = '8pt monospace'
+c.fonts.completion.entry = '12pt Fira Code'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = '8pt monospace'
+c.fonts.statusbar = '12pt Fira Code'
 
 # Font used in the tab bar.
 # Type: QtFont
-c.fonts.tabs = '8pt monospace'
+c.fonts.tabs = '12pt Fira Code'
 
 # Bindings for normal mode
 config.bind('xb', 'config-cycle statusbar.hide')
