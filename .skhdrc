@@ -1,5 +1,5 @@
 cmd - return : open -a Terminal ~/
-cmd + shift - return : open -a qutebrowser -n
+cmd + shift - return : open -n -a qutebrowser 
 
 cmd - q : yabai -m window --close
 
@@ -8,7 +8,7 @@ cmd - j : yabai -m window --focus south
 cmd - k : yabai -m window --focus north
 cmd - l : yabai -m window --focus east
 
-cmd - t : yabai -m window --focus recent 
+cmd - t : yabai -m window --toggle split
 
 shift + alt - 0 : yabai -m space --balance
 
