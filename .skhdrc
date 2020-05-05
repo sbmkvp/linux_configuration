@@ -20,12 +20,10 @@ shift + cmd - l : yabai -m window --warp east
 cmd - 1  : yabai -m display --focus 1
 cmd - 2  : yabai -m display --focus 2
 cmd - 3  : yabai -m display --focus 3
-cmd - 4  : yabai -m display --focus 4
 
 shift + cmd - 1  : yabai -m window --display 1 && yabai -m display --focus 1
 shift + cmd - 2  : yabai -m window --display 2 && yabai -m display --focus 2
 shift + cmd - 3  : yabai -m window --display 3 && yabai -m display --focus 3
-shift + cmd - 4  : yabai -m window --display 4 && yabai -m display --focus 4
 
 alt - 1  : yabai -m space --focus 1
 alt - 2  : yabai -m space --focus 2
