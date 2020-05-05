@@ -99,46 +99,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 stty -ixon
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx &> /dev/null
-fi
-
-alias cdrcdesk="ssh -CYt ucfnbso@squarepeg.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
-alias cdrcdesk_a="ssh -CYt ucfnbso@archibald.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
-alias cdrcdesk_t="ssh -CYt ucfnbso@triangleting.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
-alias cdrcdesk_c="ssh -CYt ucfnbso@roundabout.geog.ucl.ac.uk ssh -CX ucfnbso@128.40.199.112"
-
-if [[ $HOST = "cdrc-desk" ]]; then
-	alias cdrcdb="ssh -C ucfnbso@cdrc-db.geog.ucl.ac.uk";
-else
-	alias cdrcdb="ssh -Ct ucfnbso@square.geog.ucl.ac.uk ssh -C ucfnbso@cdrc-db.geog.ucl.ac.uk";
-	alias cdrcdb_a="ssh -Ct ucfnbso@arch.geog.ucl.ac.uk ssh -C ucfnbso@cdrc-db.geog.ucl.ac.uk";
-	alias cdrcdb_t="ssh -Ct ucfnbso@triangle.geog.ucl.ac.uk ssh -C ucfnbso@cdrc-db.geog.ucl.ac.uk";
-	alias cdrcdb_c="ssh -Ct ucfnbso@circle.geog.ucl.ac.uk ssh -C ucfnbso@cdrc-db.geog.ucl.ac.uk";
-fi
-
-alias garageinc="ssh -C bala@164.132.196.212"
 alias awkc="gawk -vFPAT='[^,]*|\"[^\"]*\"'"
-alias web=qutebrowser
-alias r=radian
 
-
-# if [ -n "${TMUX+1}" ]; then
-# 	PROMPT="%{$terminfo[bold]$fg[red]%}$(tmux display-message -p '#S')-%13>>%m%>> >> %{$reset_color%}"
-# 	TERM=screen-256color
-# else
-# 	PROMPT="%{$terminfo[bold]$fg[red]%}%13>>%m%>> >> %{$reset_color%}"
-# fi
-
-echo -e '\033[?112c'
-# export TERM=screen-256color
-alias mac_sst_start='ssh -D 8080 -f -q -C -N bala@geoinformatics.uk'
-alias mac_proxy_on="sudo networksetup -setsocksfirewallproxy Wi-Fi localhost 8080"
-alias mac_proxy_off="sudo networksetup -setsocksfirewallproxystate Wi-Fi off"
-alias note="NAME=$(date +'%Y%m%d_%H%M'); touch $NAME.md && vim $NAME.md"
 export SPACESHIP_TIME_SHOW=true
 export SPACESHIP_BATTERY_SHOW=always
 export SPACESHIP_CHAR_SYMBOL=">> "
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+clear
