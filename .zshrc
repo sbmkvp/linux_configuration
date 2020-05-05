@@ -104,5 +104,6 @@ alias awkc="gawk -vFPAT='[^,]*|\"[^\"]*\"'"
 export SPACESHIP_TIME_SHOW=true
 export SPACESHIP_BATTERY_SHOW=always
 export SPACESHIP_CHAR_SYMBOL=">> "
+export SPACESHIP_CHAR_SUFFIX='\033[?16;0;244c'
 
 clear
