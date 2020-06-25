@@ -104,13 +104,13 @@ alias awkc="gawk -vFPAT='[^,]*|\"[^\"]*\"'"
 export SPACESHIP_TIME_SHOW=true
 export SPACESHIP_BATTERY_SHOW=always
 export SPACESHIP_CHAR_SYMBOL=">> "
-export SPACESHIP_CHAR_SUFFIX='\033[?16;0;244c'
 export SPACESHIP_BATTERY_SYMBOL_CHARGING='\u2191 '
 export SPACESHIP_BATTERY_SYMBOL_DISCHARGING='\u2193 '
 export SPACESHIP_BATTERY_SYMBOL_FULL='\u2022 '
 
 alias brightness="sudo tee /sys/class/backlight/intel_backlight/brightness"
+alias va_sync="unison -auto -terse ./Value_Australia ssh://ubuntu@10.116.2.168//home/ubuntu/Value_Australia"
 
+export FZF_DEFAULT_OPTS='--color light'
 export PATH="$PATH:/Users/bala/.local/bin"
-
 clear
