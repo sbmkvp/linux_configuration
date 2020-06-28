@@ -35,7 +35,7 @@ set t_Co=256
 set background=light
 let g:tex_flavor='latex'
 
-" colorscheme contrast
+colorscheme contrast
 " Highlighting the last column in red and cursor column
 highlight OverLength ctermbg=darkred ctermfg=grey
 match OverLength /\%82v./
@@ -145,7 +145,7 @@ map fi :Rg<CR>
 map Fi :Ag<CR>
 
 " let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'light'
+let g:airline_theme = 'base16_colors'
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
