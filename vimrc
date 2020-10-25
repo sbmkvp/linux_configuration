@@ -80,8 +80,8 @@ endfun
 " imap jk <Esc>
 map <C-j> gj
 map <C-k> gk
-map <C-n> :set wrap<CR>
-map <C-m> :set nowrap<CR>
+" map <C-n> :set wrap<CR>
+" map <C-m> :set nowrap<CR>
 nnoremap ; :
 set mouse=a
 
@@ -162,4 +162,11 @@ let g:airline_symbols.maxlinenr = ''
 " Table mode 
 map ta :TableModeRealign<CR>
 map tt :TableModeToggle<CR>
+
+" Vimtex Settings
+let g:vimtex_view_general_viewer ='open -a skim'
+let g:vimtex_quickfix_enabled = 0
+let g:Tex_ShowErrorContext = 0
+let g:Tex_GotoError = 0
+
 
