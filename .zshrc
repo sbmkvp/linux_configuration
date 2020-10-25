@@ -111,6 +111,5 @@ export SPACESHIP_BATTERY_SYMBOL_FULL='\u2022 '
 alias brightness="sudo tee /sys/class/backlight/intel_backlight/brightness"
 alias va_sync="unison -auto -terse ./Value_Australia ssh://ubuntu@10.116.2.168//home/ubuntu/Value_Australia"
 
-export FZF_DEFAULT_OPTS='--color light'
 export PATH="$PATH:/Users/bala/.local/bin"
 clear

@@ -1,5 +1,5 @@
-cmd - return : open -a Terminal ~/
-cmd + shift - return : open -n -a qutebrowser 
+cmd + shift - return : open -a Terminal ~/
+cmd + shift + alt - return : open -n -a qutebrowser
 
 cmd - q : yabai -m window --close
 
@@ -17,12 +17,12 @@ shift + cmd - j : yabai -m window --warp south
 shift + cmd - k : yabai -m window --warp north
 shift + cmd - l : yabai -m window --warp east
 
-cmd - 1  : yabai -m display --focus 1
-cmd - 2  : yabai -m display --focus 2
+cmd - 1  : yabai -m display --focus 2
+cmd - 2  : yabai -m display --focus 1
 cmd - 3  : yabai -m display --focus 3
 
-shift + cmd - 1  : yabai -m window --display 1 && yabai -m display --focus 1
-shift + cmd - 2  : yabai -m window --display 2 && yabai -m display --focus 2
+shift + cmd - 1  : yabai -m window --display 2 && yabai -m display --focus 2
+shift + cmd - 2  : yabai -m window --display 1 && yabai -m display --focus 1
 shift + cmd - 3  : yabai -m window --display 3 && yabai -m display --focus 3
 
 alt - 1  : yabai -m space --focus 1
