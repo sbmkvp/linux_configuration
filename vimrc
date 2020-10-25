@@ -5,23 +5,23 @@ filetype off
 " Load Plugings through vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim' " Plugin manager
-Plugin 'tomtom/tcomment_vim' " Commenting lines and selections
-Plugin 'eiginn/netrw' " File manager
-Plugin 'jalvesaq/Nvim-R' " R mode
-Plugin 'junegunn/goyo.vim' " Writing mode
-Plugin 'junegunn/limelight.vim' " highlight current paragraph
-Plugin 'lervag/vimtex' " Latex mode
-Plugin 'sbmkvp/vim-colour-scheme' " My Own Colorscheme
-Plugin 'townk/vim-autoclose' " Close the paranthesis and tags
-Plugin 'tpope/vim-surround' " Surround stuff with things
-Plugin 'airblade/vim-gitgutter' " Show git changes for each line
-Plugin 'tpope/vim-fugitive' " Show git changes for each line
-Plugin 'dhruvasagar/vim-table-mode' " Making tables in vim
-Plugin 'junegunn/fzf' " Fuzzy search files
-Plugin 'junegunn/fzf.vim' " Fuzzy search files
-Plugin 'vim-airline/vim-airline' " Status line
-Plugin 'vim-airline/vim-airline-themes' " Status line themes
+Plugin 'VundleVim/Vundle.vim' "Plugin manager
+Plugin 'tomtom/tcomment_vim' "Commenting lines and selections
+Plugin 'eiginn/netrw' "File manager
+Plugin 'jalvesaq/Nvim-R' "R mode
+Plugin 'junegunn/goyo.vim' "Writing mode
+Plugin 'junegunn/limelight.vim' "highlight current paragraph
+Plugin 'lervag/vimtex' "Latex mode
+Plugin 'sbmkvp/vim-colour-scheme' "My Own Colorscheme
+Plugin 'townk/vim-autoclose' "Close the paranthesis and tags
+Plugin 'tpope/vim-surround' "Surround stuff with things
+Plugin 'airblade/vim-gitgutter' "Show git changes for each line
+Plugin 'tpope/vim-fugitive' "Show git changes for each line
+Plugin 'dhruvasagar/vim-table-mode' "Making tables in vim
+Plugin 'junegunn/fzf' "Fuzzy search files
+Plugin 'junegunn/fzf.vim' "Fuzzy search files
+Plugin 'vim-airline/vim-airline' "Status line
+Plugin 'vim-airline/vim-airline-themes' "Status line themes
 call vundle#end()
 
 " File type detection
@@ -32,10 +32,11 @@ filetype plugin on
 syntax enable
 set showmatch " Show matching paranthesis
 set t_Co=256
-set background=light
+set background=dark
 let g:tex_flavor='latex'
 
 colorscheme contrast
+
 " Highlighting the last column in red and cursor column
 highlight OverLength ctermbg=darkred ctermfg=grey
 match OverLength /\%82v./

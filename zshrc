@@ -113,4 +113,7 @@ alias va_sync="unison -auto -terse ./Value_Australia ssh://ubuntu@10.116.2.168//
 
 export FZF_DEFAULT_OPTS='--color light'
 export PATH="$PATH:/Users/bala/.local/bin"
+export EDITOR="vim"
 clear
+
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
